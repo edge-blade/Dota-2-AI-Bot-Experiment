@@ -20,20 +20,20 @@ function ItemUsageThink()
 end
 
 --[[ Abilities
-"Ability1"		"omniknight_purification"
-"Ability2"		"omniknight_repel"
-"Ability3"		"omniknight_degen_aura"
-"Ability4"		"generic_hidden"
-"Ability5"		"generic_hidden"
-"Ability6"		"omniknight_guardian_angel"
-"Ability10"		"special_bonus_gold_income_15"
-"Ability11"		"special_bonus_unique_omniknight_4"
-"Ability12"		"special_bonus_exp_boost_35"
-"Ability13"		"special_bonus_attack_damage_90"
-"Ability14"		"special_bonus_unique_omniknight_2"
-"Ability15"		"special_bonus_mp_regen_4"
-"Ability16"		"special_bonus_unique_omniknight_1"
-"Ability17"		"special_bonus_unique_omniknight_3"
+	"Ability1"		"omniknight_purification"
+	"Ability2"		"omniknight_martyr"
+	"Ability3"		"omniknight_hammer_of_purity"
+	"Ability4"		"omniknight_degen_aura"
+	"Ability5"		"generic_hidden"
+	"Ability6"		"omniknight_guardian_angel"
+	"Ability10"		"special_bonus_unique_omniknight_5"
+	"Ability11"		"special_bonus_attack_base_damage_50"
+	"Ability12"		"special_bonus_unique_omniknight_6"
+	"Ability13"		"special_bonus_unique_omniknight_7"
+	"Ability14"		"special_bonus_unique_omniknight_2"
+	"Ability15"		"special_bonus_unique_omniknight_3"
+	"Ability16"		"special_bonus_unique_omniknight_1"
+	"Ability17"		"special_bonus_unique_omniknight_4"
 ]]--
 
 --[[ Modifier
@@ -184,6 +184,51 @@ local function ConsiderW()
 	return BOT_ACTION_DESIRE_NONE, nil;
 end
 
+
+local function ConsiderE()
+
+	local abilityE = abilities[3];
+
+	-- Make sure it's castable
+	if ( not abilityE:IsFullyCastable() ) then 
+		return BOT_ACTION_DESIRE_NONE, 0;
+	end
+
+	-- Get some of its values
+	local nCastRange   = abilityE:GetCastRange();
+	local nDamage      = abilityE:GetSpecialValueInt('omniknight_hammer_of_purity');
+	local nCastPoint   = abilityE:GetCastPoint( );
+	local nManaCost    = abilityE:GetManaCost( );
+	
+	local tableNearbyEnemyHeroes = bot:GetNearbyHeroes( nCastRange+200, true, BOT_MODE_NONE );
+	
+	-- If we're seriously retreating, see if we can land a slow on someone who's damaged us recently
+	if mutil.IsRetreating(bot)
+	then
+		for _,npcEnemy in pairs( tableNearbyEnemyHeroes )
+		do
+			if ( bot:WasRecentlyDamagedByHero( npcEnemy, 2.0 ) and mutil.CanCastOnNonMagicImmune(npcEnemy) ) 
+			then
+				return BOT_ACTION_DESIRE_HIGH, npcEnemy;
+			end
+		end
+	end
+	
+	-- If we're going after someone
+	if mutil.IsGoingOnSomeone(bot) and bot:GetMaxHealth() - bot:GetHealth() > nDamage
+	then
+		local npcTarget = bot:GetTarget();
+		if mutil.IsValidTarget(npcTarget) and mutil.CanCastOnNonMagicImmune(npcTarget)and mutil.IsInRange(npcTarget, bot, nCastRange + 200)
+		and not mutils.IsDisabled(true, npcTarget)
+		then
+			return BOT_ACTION_DESIRE_HIGH, npcTarget;
+		end
+	end
+	
+	return BOT_ACTION_DESIRE_NONE, 0;
+
+end
+
 local function ConsiderR()
 
 	if  mutils.CanBeCast(abilities[4]) == false then
@@ -230,6 +275,7 @@ function AbilityUsageThink()
 	
 	castQDesire, qTarget = ConsiderQ();
 	castWDesire, wTarget = ConsiderW();
+	castEDesire, eTarget = ConsiderE();
 	castRDesire			 = ConsiderR();
 	
 	if castRDesire > 0 then
@@ -241,9 +287,14 @@ function AbilityUsageThink()
 		bot:Action_UseAbilityOnEntity(abilities[1], qTarget);		
 		return
 	end
-	
+
 	if castWDesire > 0 then
 		bot:Action_UseAbilityOnEntity(abilities[2], wTarget);	
+		return
+	end
+
+	if castEDesire > 0 then
+		bot:Action_UseAbilityOnEntity(abilities[3], eTarget);		
 		return
 	end
 	
