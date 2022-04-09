@@ -11,7 +11,7 @@ local requiredHeroes = {
 };
 
 local UnImplementedHeroes = {
-	
+	'npc_dota_hero_primal_beast'
 };
 
 ----------------------------------------------------------GIVE THE BOT A PRO PLAYER NAME---------------------------------------------------------------------------------------------

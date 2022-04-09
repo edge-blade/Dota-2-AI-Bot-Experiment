@@ -1168,3 +1168,4 @@ X.Modifiers = {
 	["modifier_zuus_arc_lightning"] = 0;
 	["modifier_zuus_lightningbolt_vision_thinker"] = 0;
 	["modifier_zuus_static_field"] = 0;
+}
