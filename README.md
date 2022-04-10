@@ -38,20 +38,20 @@ I believe some of the generic bot scripts will affect NPCs that have AI that a s
 * **item_purchase_generic.lua**  - decides how a bot will select items to purchase 
 
 #### Util Files used by other scripts dynamically
-* BotData.lua
-* BotNameUtility.lua
-* botutils.lua
-* CampUtility.lua
-* CourierUtility.lua
+* BotData.lua - NOT REFERENCED
+* BotNameUtility.lua - Name groupings to assign bot names as if they're "teams"
+* botutils.lua - generic repeatable functions to decide bot behavior (abbadon & underlord only reference this currently)
+* CampUtility.lua - helper functions around farming and camp assessment
+* CourierUtility.lua - courier module that functions like a Class in OO programming
 * DebugUtility.lua
-* enemy_status.lua
-* EnemyUtility.lua
+* enemy_status.lua - support module for `team_status.lua`
+* EnemyUtility.lua - NOT USED - apparent planned support module for referencing enemy team
 * inspect.lua
-* ItemBuildUtility.lua
+* ItemBuildUtility.lua - helper functions to fill out bot skill & talent tables
 * ItemUsageUtility.lua - support file for when, where, and how to use different items
 * ItemUtility.lua - utilities defining how items are built and logic surrounding item decisions
 * jungle_status.lua - used in meepo bot to decide when jungles are ready to be farmed or have been cleared/reset
-* meepo_status.lua
+* meepo_status.lua - support module to coordinate meepo desires
 * MinionUtility.lua - decision making for each minion type
 * neutral_spells.lua - *NOT IMPLEMENTED* - Seems to contain ability decision making specific to neutral skills for using via Doom or other NPC Control techniques like Chen
 * NewMinionUtil.lua *** new design of of the MinionUtility module
