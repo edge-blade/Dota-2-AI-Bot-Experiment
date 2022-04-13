@@ -2217,60 +2217,60 @@ end
 
 ----------NEUTRAL ITEM------------
 
---item_iron_talon
-ItemUsageModule.Use['item_iron_talon'] = function(item, bot, mode, extra_range)
-	if bot:GetActiveMode() == BOT_MODE_FARM or mutil.IsDefending(bot) or mutil.IsPushing(bot) 
-	then
-		local neutrals = bot:GetNearbyCreeps(350, true);
-		local maxHP = 0;
-		local target = nil;
-		for _,c in pairs(neutrals) do
-			local cHP = c:GetHealth();
-			if cHP > maxHP and not c:IsAncientCreep() then
-				maxHP = cHP;
-				target = c;
-			end
-		end
-		if target ~= nil then
-			return BOT_ACTION_DESIRE_ABSOLUTE, target, 'unit';
-		end
-	end
-	return BOT_ACTION_DESIRE_NONE;
-end
+-- --item_iron_talon
+-- ItemUsageModule.Use['item_iron_talon'] = function(item, bot, mode, extra_range)
+-- 	if bot:GetActiveMode() == BOT_MODE_FARM or mutil.IsDefending(bot) or mutil.IsPushing(bot) 
+-- 	then
+-- 		local neutrals = bot:GetNearbyCreeps(350, true);
+-- 		local maxHP = 0;
+-- 		local target = nil;
+-- 		for _,c in pairs(neutrals) do
+-- 			local cHP = c:GetHealth();
+-- 			if cHP > maxHP and not c:IsAncientCreep() then
+-- 				maxHP = cHP;
+-- 				target = c;
+-- 			end
+-- 		end
+-- 		if target ~= nil then
+-- 			return BOT_ACTION_DESIRE_ABSOLUTE, target, 'unit';
+-- 		end
+-- 	end
+-- 	return BOT_ACTION_DESIRE_NONE;
+-- end
 
 --item_ironwood_tree
-ItemUsageModule.Use['item_ironwood_tree'] = function(item, bot, mode, extra_range)
-	local nCastRange = 600;
-	if mutil.IsRetreating(bot)
-		and bot:WasRecentlyDamagedByAnyHero(3.0) 
-	then
-		local enemies = bot:GetNearbyHeroes(nCastRange, true, BOT_MODE_NONE);
-		if #enemies > 0 and enemies[1] ~= nil and GetUnitToUnitDistance(bot, enemies[1]) > 150 then
-			return BOT_ACTION_DESIRE_ABSOLUTE, bot:GetXUnitsTowardsLocation(enemies[1]:GetLocation(), 75), 'point';
-		end
-	end
-	return BOT_ACTION_DESIRE_NONE;
-end
+-- ItemUsageModule.Use['item_ironwood_tree'] = function(item, bot, mode, extra_range)
+-- 	local nCastRange = 600;
+-- 	if mutil.IsRetreating(bot)
+-- 		and bot:WasRecentlyDamagedByAnyHero(3.0) 
+-- 	then
+-- 		local enemies = bot:GetNearbyHeroes(nCastRange, true, BOT_MODE_NONE);
+-- 		if #enemies > 0 and enemies[1] ~= nil and GetUnitToUnitDistance(bot, enemies[1]) > 150 then
+-- 			return BOT_ACTION_DESIRE_ABSOLUTE, bot:GetXUnitsTowardsLocation(enemies[1]:GetLocation(), 75), 'point';
+-- 		end
+-- 	end
+-- 	return BOT_ACTION_DESIRE_NONE;
+-- end
 
---item_royal_jelly
-ItemUsageModule.Use['item_royal_jelly'] = function(item, bot, mode, extra_range)
-	local nCastRange = 250 + 200;
-	local allies = bot:GetNearbyHeroes(nCastRange, false, BOT_MODE_NONE);
-	for i=1, #allies do
-		if allies[i]:HasModifier("modifier_royal_jelly") == false
-			and mutil.CanCastOnNonMagicImmune(allies[i]) 
-		then
-			return BOT_ACTION_DESIRE_ABSOLUTE, allies[i], 'unit';
-		end
-	end
-	return BOT_ACTION_DESIRE_NONE;
-end
+-- --item_royal_jelly
+-- ItemUsageModule.Use['item_royal_jelly'] = function(item, bot, mode, extra_range)
+-- 	local nCastRange = 250 + 200;
+-- 	local allies = bot:GetNearbyHeroes(nCastRange, false, BOT_MODE_NONE);
+-- 	for i=1, #allies do
+-- 		if allies[i]:HasModifier("modifier_royal_jelly") == false
+-- 			and mutil.CanCastOnNonMagicImmune(allies[i]) 
+-- 		then
+-- 			return BOT_ACTION_DESIRE_ABSOLUTE, allies[i], 'unit';
+-- 		end
+-- 	end
+-- 	return BOT_ACTION_DESIRE_NONE;
+-- end
 
---item_mango_tree
-ItemUsageModule.Use['item_mango_tree'] = function(item, bot, mode, extra_range)
-	local nCastRange = 200;
-	return BOT_ACTION_DESIRE_ABSOLUTE, bot:GetLocation() + RandomVector(nCastRange), 'point';
-end
+-- --item_mango_tree
+-- ItemUsageModule.Use['item_mango_tree'] = function(item, bot, mode, extra_range)
+-- 	local nCastRange = 200;
+-- 	return BOT_ACTION_DESIRE_ABSOLUTE, bot:GetLocation() + RandomVector(nCastRange), 'point';
+-- end
 
 --item_trusty_shovel
 ItemUsageModule.Use['item_trusty_shovel'] = function(item, bot, mode, extra_range)
@@ -2304,48 +2304,48 @@ ItemUsageModule.Use['item_vambrace'] = function(item, bot, mode, extra_range)
 	return BOT_ACTION_DESIRE_NONE;
 end
 
---item_clumsy_net
-ItemUsageModule.Use['item_clumsy_net'] = function(item, bot, mode, extra_range)
-	local nCastRange = 650;
+-- --item_clumsy_net
+-- ItemUsageModule.Use['item_clumsy_net'] = function(item, bot, mode, extra_range)
+-- 	local nCastRange = 650;
 	
-	if mutil.IsGoingOnSomeone(bot)
-	then	
-		local target = bot:GetTarget();
-		if mutil.IsValidTarget(target) == true
-			and mutil.CanCastOnNonMagicImmune(target) == true 
-			and mutil.IsInRange(target, bot, nCastRange) == true 
-			and mutil.IsDisabled(true, target) == false
-		then
-			return BOT_ACTION_DESIRE_ABSOLUTE, target, 'unit';
-		end
-	end
-	return BOT_ACTION_DESIRE_NONE;
-end
+-- 	if mutil.IsGoingOnSomeone(bot)
+-- 	then	
+-- 		local target = bot:GetTarget();
+-- 		if mutil.IsValidTarget(target) == true
+-- 			and mutil.CanCastOnNonMagicImmune(target) == true 
+-- 			and mutil.IsInRange(target, bot, nCastRange) == true 
+-- 			and mutil.IsDisabled(true, target) == false
+-- 		then
+-- 			return BOT_ACTION_DESIRE_ABSOLUTE, target, 'unit';
+-- 		end
+-- 	end
+-- 	return BOT_ACTION_DESIRE_NONE;
+-- end
 
---item_repair_kit
-ItemUsageModule.Use['item_repair_kit'] = function(item, bot, mode, extra_range)
-	local nCastRange = 600;
-	local towers = bot:GetNearbyTowers(nCastRange, false);
-	for i=1, #towers do
-		if towers[i]:GetHealth() <= 0.6 * towers[i]:GetMaxHealth() and towers[i]:HasModifier("modifier_repair_kit") == false then
-			return BOT_ACTION_DESIRE_ABSOLUTE, towers[i], 'unit';
-		end
-	end
-	return BOT_ACTION_DESIRE_NONE;
-end
+-- --item_repair_kit
+-- ItemUsageModule.Use['item_repair_kit'] = function(item, bot, mode, extra_range)
+-- 	local nCastRange = 600;
+-- 	local towers = bot:GetNearbyTowers(nCastRange, false);
+-- 	for i=1, #towers do
+-- 		if towers[i]:GetHealth() <= 0.6 * towers[i]:GetMaxHealth() and towers[i]:HasModifier("modifier_repair_kit") == false then
+-- 			return BOT_ACTION_DESIRE_ABSOLUTE, towers[i], 'unit';
+-- 		end
+-- 	end
+-- 	return BOT_ACTION_DESIRE_NONE;
+-- end
 
---item_greater_faerie_fire
-ItemUsageModule.Use['item_greater_faerie_fire'] = function(item, bot, mode, extra_range)
-	local hpRes = 500;
-	if mutil.IsRetreating(bot) == true
-		and bot:DistanceFromFountain() > 0 == true 
-		and ( bot:WasRecentlyDamagedByAnyHero(3.0) == true or bot:WasRecentlyDamagedByTower(3.0) == true )
-		and bot:GetHealth() < 0.25 * bot:GetMaxHealth()   
-	then
-		return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
-	end
-	return BOT_ACTION_DESIRE_NONE;
-end
+-- --item_greater_faerie_fire
+-- ItemUsageModule.Use['item_greater_faerie_fire'] = function(item, bot, mode, extra_range)
+-- 	local hpRes = 500;
+-- 	if mutil.IsRetreating(bot) == true
+-- 		and bot:DistanceFromFountain() > 0 == true 
+-- 		and ( bot:WasRecentlyDamagedByAnyHero(3.0) == true or bot:WasRecentlyDamagedByTower(3.0) == true )
+-- 		and bot:GetHealth() < 0.25 * bot:GetMaxHealth()   
+-- 	then
+-- 		return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+-- 	end
+-- 	return BOT_ACTION_DESIRE_NONE;
+-- end
 
 --item_spider_legs
 ItemUsageModule.Use['item_spider_legs'] = function(item, bot, mode, extra_range)
@@ -2402,50 +2402,50 @@ ItemUsageModule.Use['item_ninja_gear'] = function(item, bot, mode, extra_range)
 	return BOT_ACTION_DESIRE_NONE;
 end
 
---item_illusionsts_cape
-ItemUsageModule.Use['item_illusionsts_cape'] = function(item, bot, mode, extra_range)
-	local nCastRange = bot:GetAttackRange();
-	local target = bot:GetTarget();
-	if mutil.IsGoingOnSomeone(bot)
-	then	
-		if mutil.IsValidTarget(target) and mutil.CanCastOnNonMagicImmune(target) 
-			and mutil.IsInRange(target, bot, nCastRange+200) 
-		then
-			return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
-		end
-	end
-	if mutil.IsRetreating(bot)
-		and ( bot:WasRecentlyDamagedByAnyHero(3.0) == true or bot:WasRecentlyDamagedByTower(3.0) == true )
-	then
-		return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
-	end
-	return BOT_ACTION_DESIRE_NONE;
-end
+-- --item_illusionsts_cape
+-- ItemUsageModule.Use['item_illusionsts_cape'] = function(item, bot, mode, extra_range)
+-- 	local nCastRange = bot:GetAttackRange();
+-- 	local target = bot:GetTarget();
+-- 	if mutil.IsGoingOnSomeone(bot)
+-- 	then	
+-- 		if mutil.IsValidTarget(target) and mutil.CanCastOnNonMagicImmune(target) 
+-- 			and mutil.IsInRange(target, bot, nCastRange+200) 
+-- 		then
+-- 			return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+-- 		end
+-- 	end
+-- 	if mutil.IsRetreating(bot)
+-- 		and ( bot:WasRecentlyDamagedByAnyHero(3.0) == true or bot:WasRecentlyDamagedByTower(3.0) == true )
+-- 	then
+-- 		return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+-- 	end
+-- 	return BOT_ACTION_DESIRE_NONE;
+-- end
 
---item_havoc_hammer
-ItemUsageModule.Use['item_havoc_hammer'] = function(item, bot, mode, extra_range)
-	local nRadius = 300;
-	if mutil.IsRetreating(bot)
-		and bot:WasRecentlyDamagedByAnyHero(3.0) 
-	then
-		local enemies = bot:GetNearbyHeroes(nRadius, true, BOT_MODE_NONE);
-		if #enemies >= 1 then
-			return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
-		end
-	end
-	if mutil.IsGoingOnSomeone(bot)
-	then	
-		local target = bot:GetTarget();
-		if mutil.IsValidTarget(target) and mutil.IsInRange(target, bot, bot:GetAttackRange()+200) == true
-		then
-			local enemies = bot:GetNearbyHeroes(nRadius, true, BOT_MODE_NONE);
-			if #enemies >= 1 then
-				return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
-			end
-		end
-	end
-	return BOT_ACTION_DESIRE_NONE;
-end
+-- --item_havoc_hammer
+-- ItemUsageModule.Use['item_havoc_hammer'] = function(item, bot, mode, extra_range)
+-- 	local nRadius = 300;
+-- 	if mutil.IsRetreating(bot)
+-- 		and bot:WasRecentlyDamagedByAnyHero(3.0) 
+-- 	then
+-- 		local enemies = bot:GetNearbyHeroes(nRadius, true, BOT_MODE_NONE);
+-- 		if #enemies >= 1 then
+-- 			return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+-- 		end
+-- 	end
+-- 	if mutil.IsGoingOnSomeone(bot)
+-- 	then	
+-- 		local target = bot:GetTarget();
+-- 		if mutil.IsValidTarget(target) and mutil.IsInRange(target, bot, bot:GetAttackRange()+200) == true
+-- 		then
+-- 			local enemies = bot:GetNearbyHeroes(nRadius, true, BOT_MODE_NONE);
+-- 			if #enemies >= 1 then
+-- 				return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+-- 			end
+-- 		end
+-- 	end
+-- 	return BOT_ACTION_DESIRE_NONE;
+-- end
 
 --item_minotaur_horn
 ItemUsageModule.Use['item_minotaur_horn'] = function(item, bot, mode, extra_range)
@@ -2488,15 +2488,15 @@ ItemUsageModule.Use['item_force_boots_old'] = function(item, bot, mode, extra_ra
 	return BOT_ACTION_DESIRE_NONE;
 end
 
---item_woodland_striders
-ItemUsageModule.Use['item_woodland_striders'] = function(item, bot, mode, extra_range)
-	if mutil.IsRetreating(bot) == true
-		and bot:WasRecentlyDamagedByAnyHero(0.5) == true
-	then
-		return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
-	end
-	return BOT_ACTION_DESIRE_NONE;
-end
+-- --item_woodland_striders
+-- ItemUsageModule.Use['item_woodland_striders'] = function(item, bot, mode, extra_range)
+-- 	if mutil.IsRetreating(bot) == true
+-- 		and bot:WasRecentlyDamagedByAnyHero(0.5) == true
+-- 	then
+-- 		return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+-- 	end
+-- 	return BOT_ACTION_DESIRE_NONE;
+-- end
 
 --item_demonicon
 ItemUsageModule.Use['item_demonicon'] = function(item, bot, mode, extra_range)

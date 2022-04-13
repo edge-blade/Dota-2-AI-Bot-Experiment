@@ -49,9 +49,6 @@ local earlyBoots = {
 	 "item_flask", 
 	 "item_infused_raindrop",
 	 "item_quelling_blade", 
-	 "item_stout_shield", 
-	 "item_iron_talon",
-	 "item_poor_mans_shield",
 	 "item_magic_wand",
 	 "item_bottle",  
 	 "item_ring_of_aquila", 
@@ -345,11 +342,6 @@ function SellEarlyGameItem()
 						npcBot:ActionImmediate_SellItem(npcBot:GetItemInSlot(itemSlot));
 						break;
 					end	
-				elseif item == "item_stout_shield"  then
-					if not HasCGorABBuild() then
-						npcBot:ActionImmediate_SellItem(npcBot:GetItemInSlot(itemSlot));
-						break;
-					end
 				elseif item == "item_tpscroll" then
 					if HasItem(npcBot, "item_travel_boots") then
 						npcBot:ActionImmediate_SellItem(npcBot:GetItemInSlot(itemSlot));

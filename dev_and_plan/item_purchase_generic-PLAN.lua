@@ -33,8 +33,6 @@ local invisHeroes = {
 	 "item_flask", 
 	 "item_infused_raindrop",
 	 "item_quelling_blade", 
-	 "item_stout_shield", 
-	 "item_poor_mans_shield",
 	 "item_magic_wand",
 	 "item_bottle", 
 	 "item_ring_of_aquila", 
@@ -247,15 +245,7 @@ function SellEarlyGameItem()
 		do
 			local slot = Bot:FindItemSlot(eItem);
 			if slot >= 0 and slot <= 9 then
-				if eItem == "item_stout_shield" then
-					if not IsExistInAllTable("item_vanguard") and 
-					   not IsExistInAllTable("item_crimson_guard") and
-					   not IsExistInAllTable("item_abyssal_blade") 
-					then
-						Bot:ActionImmediate_SellItem(Bot:GetItemInSlot(slot));
-						return
-					end
-				elseif eItem == "item_quelling_blade" then	
+				if eItem == "item_quelling_blade" then	
 					if not IsExistInAllTable("item_bfury") then
 						Bot:ActionImmediate_SellItem(Bot:GetItemInSlot(slot));
 						return
@@ -287,9 +277,6 @@ function FillStartingItem()
 			InsertItemToTable(0, 'item_clarity');
 		end
 		if role.IsMelee(AttackRange) then
-			if string.find(BotName, "tidehunter") then 
-			  InsertItemToTable(0, 'item_stout_shield');
-			end  
 			InsertItemToTable(0, 'item_quelling_blade');
 			BuyStartingStatItem();
 		end

@@ -4,83 +4,66 @@ ItemModule['neutralItem'] = {
 	--Tier 1
 	['item_arcane_ring'] = 1,
 	['item_broom_handle'] = 1,
-	['item_elixer'] = 1,
-	['item_faded_broach'] = 1,
-	-- ['item_iron_talon'] = 1,
-	['item_keen_optic'] = 1,
-	-- ['item_mango_tree'] = 1,
-	['item_ocean_heart'] = 1,
-	-- ['item_poor_mans_shield'] = 1,
-	-- ['item_royal_jelly'] = 1,
-	['item_trusty_shovel'] = 1,
-	['item_ironwood_tree'] = 1,
-	['item_mysterious_hat'] = 1,
 	['item_chipped_vest'] = 1,
+	['item_mysterious_hat'] = 1, -- fairy's trinket
+	['item_keen_optic'] = 1,
+	['item_ocean_heart'] = 1,
+	['item_unstable_wand'] = 1, -- pig pole
 	['item_possessed_mask'] = 1,
+	['item_trusty_shovel'] = 1,
+	['item_pogo_stick'] = 1, -- tumbler's toy
 	--Tier 2
-	-- ['item_clumsy_net'] = 2,
+	['item_misericorde'] = 2,
+	['item_bullwhip'] = 2,
 	['item_dragon_scale'] = 2,
 	['item_essence_ring'] = 2,
+	['item_paintball'] = 2, -- fae grenade
 	['item_grove_bow'] = 2,
-	['item_imp_claw'] = 2,
 	['item_nether_shawl'] = 2,
 	['item_philosophers_stone'] = 2,
 	['item_pupils_gift'] = 2,
-	['item_ring_of_aquila'] = 2,
-	-- ['item_vampire_fangs'] = 2,
-	['item_vambrace'] = 2,
 	['item_quicksilver_amulet'] = 2,
-	['item_bullwhip'] = 2,
+	['item_ring_of_aquila'] = 2,
+	['item_vambrace'] = 2,
 	--Tier 3
-	-- ['item_craggy_coat'] = 3,
-	['item_enchanted_quiver'] = 3,
-	-- ['item_greater_faerie_fire'] = 3,
-	['item_helm_of_the_undying'] = 3,
-	['item_mind_breaker'] = 3,
-	['item_orb_of_destruction'] = 3,
-	['item_paladin_sword'] = 3,
-	['item_quickening_charm'] = 3,
-	-- ['item_repair_kit'] = 3,
-	['item_spider_legs'] = 3,
-	['item_third_eye'] = 3,
-	['item_spy_gadget'] = 3,
-	['item_titan_sliver'] = 3,
-	['item_elven_tunic'] = 3,
-	['item_cloak_of_flames'] = 3,
+	['black_powder_bag'] = 3, -- Blast Rig
 	['item_ceremonial_robe'] = 3,
+	['item_cloak_of_flames'] = 3,
+	['item_elven_tunic'] = 3,
+	['item_enchanted_quiver'] = 3,
+	['item_mind_breaker'] = 3,
+	['item_helm_of_the_undying'] = 3,
+	['item_paladin_sword'] = 3,
 	['item_psychic_headband'] = 3,
+	['item_quickening_charm'] = 3,
+	['item_spider_legs'] = 3,
+	['item_titan_sliver'] = 3,
 	--Tier 4
+	['item_ascetic_cap'] = 4,
 	['item_flicker'] = 4,
-	['item_havoc_hammer'] = 4,
-	['item_illusionsts_cape'] = 4,
-	-- ['item_panic_button'] = 4,
-	['item_minotaur_horn'] = 4,
 	['item_ninja_gear'] = 4,
-	-- ['item_princes_knife'] = 4,
+	['item_penta_edged_sword'] = 4,
 	['item_spell_prism'] = 4,
+	['item_stormcrafter'] = 4,
+	['item_minotaur_horn'] = 4,
+	['item_spy_gadget'] = 4,
 	['item_the_leveller'] = 4,
 	['item_timeless_relic'] = 4,
-	-- ['item_witless_shako'] = 4,
-	['item_penta_edged_sword'] = 4,
-	['item_stormcrafter'] = 4,
 	['item_trickster_cloak'] = 4,
+	['item_heavy_blade'] = 4,
 	--Tier 5
 	['item_apex'] = 5,
-	['item_ballista'] = 5,
-	['item_demonicon'] = 5,
-	['item_desolator_2'] = 5,
+	['item_force_field'] = 5,
+	['item_book_of_shadows'] = 5,
+	['item_demonicon'] = 5, -- book of the dead
 	['item_ex_machina'] = 5,
 	['item_fallen_sky'] = 5,
 	['item_force_boots'] = 5,
-	['item_fusion_rune'] = 5,
+	['item_giants_ring'] = 5,
 	['item_mirror_shield'] = 5,
-	['item_phoenix_ash'] = 5,
 	['item_pirate_hat'] = 5,
 	['item_seer_stone'] = 5,
-	-- ['item_recipe_trident'] = 5,
-	-- ['item_woodland_striders'] = 5,
-	['item_giants_ring'] = 5,
-	['item_book_of_shadows'] = 5,
+	['item_desolator_2'] = 5,
 }
 
 ItemModule['earlyGameItem'] = {
@@ -91,7 +74,6 @@ ItemModule['earlyGameItem'] = {
 	 "item_flask", 
 	 "item_infused_raindrop",
 	 "item_quelling_blade", 
-	 "item_stout_shield", 
 	 "item_magic_wand",
 	 "item_bottle",  
 	 "item_soul_ring",  
@@ -172,7 +154,6 @@ ItemModule["basic_items"] = {
 	"item_slippers";
 	"item_smoke_of_deceit";
 	"item_staff_of_wizardry";
-	"item_stout_shield";
 	"item_talisman_of_evasion";
 	"item_tango";
 	"item_tango_single";
@@ -276,7 +257,7 @@ ItemModule["item_hood_of_defiance"] = { "item_ring_of_health"; "item_cloak"; "it
 
 ItemModule["item_hurricane_pike"] = { "item_dragon_lance"; "item_force_staff"; "item_recipe_hurricane_pike" }
 
-ItemModule["item_iron_talon"] = { "item_quelling_blade"; "item_ring_of_protection"; "item_recipe_iron_talon" }
+-- ItemModule["item_iron_talon"] = { "item_quelling_blade"; "item_ring_of_protection"; "item_recipe_iron_talon" }
 
 ItemModule["item_sphere"] = { "item_pers"; "item_ultimate_orb"; "item_recipe_sphere" }
 
@@ -319,8 +300,6 @@ ItemModule["item_pers"] = { "item_ring_of_health"; "item_void_stone" }
 ItemModule["item_phase_boots"] = { "item_boots"; "item_chainmail"; "item_blades_of_attack" }
 
 ItemModule["item_pipe"] = { "item_hood_of_defiance"; "item_headdress"; "item_recipe_pipe" }
-
-ItemModule["item_poor_mans_shield"] = { "item_stout_shield"; "item_slippers"; "item_slippers" }
 
 ItemModule["item_power_treads_agi"] = { "item_boots"; "item_boots_of_elves"; "item_gloves" }
 

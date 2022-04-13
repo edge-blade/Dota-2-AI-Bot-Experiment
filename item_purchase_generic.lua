@@ -95,9 +95,6 @@ if DotaTime() < 0 then
 	if bot:GetAttackRange() < 320 and unitName ~= 'npc_dota_hero_templar_assassin' and unitName ~= 'npc_dota_hero_tidehunter' then
 		if role.IsCarry(unitName) then
 			bot.itemToBuy[#bot.itemToBuy+1] = 'item_quelling_blade';
-			-- bot.itemToBuy[#bot.itemToBuy+1] = 'item_stout_shield';
-		-- else
-			-- bot.itemToBuy[#bot.itemToBuy+1] = 'item_stout_shield';
 		end
 	end
 	bot.itemToBuy[#bot.itemToBuy+1] = 'item_flask';
@@ -387,12 +384,7 @@ function ItemPurchaseThink()
 				local item = items['earlyGameItem'][i];
 				local itemSlot = bot:FindItemSlot(item);
 				if itemSlot >= 0 and itemSlot <= 8 then
-					if item == "item_stout_shield" then
-						if bot.buildVanguard == false  then
-							slotToSell = itemSlot;
-							break;
-						end
-					elseif item == "item_magic_wand" then
+					if item == "item_magic_wand" then
 						if bot.buildHoly == false  then
 							slotToSell = itemSlot;
 							break;

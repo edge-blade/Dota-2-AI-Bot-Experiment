@@ -74,7 +74,6 @@ function HaveItemToSell()
 		 "item_flask", 
 		 "item_infused_raindrop",
 		 "item_quelling_blade", 
-		 "item_stout_shield", 
 		 "item_magic_wand",
 		 "item_bottle",  
 		 "item_soul_ring",  
@@ -89,12 +88,7 @@ function HaveItemToSell()
 	for _,item in pairs(earlyGameItem) do
 		local itemSlot = npcBot:FindItemSlot(item);
 		if itemSlot >= 0 and itemSlot <= 8 then
-			if item == "item_stout_shield" then
-				if npcBot.buildVanguard == false  then
-					slotToSell = itemSlot;
-					break;
-				end
-			elseif item == "item_magic_wand" then
+			if item == "item_magic_wand" then
 				if npcBot.buildHoly == false  then
 					slotToSell = itemSlot;
 					break;

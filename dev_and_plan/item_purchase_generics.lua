@@ -49,9 +49,6 @@ local earlyBoots = {
 	 "item_flask", 
 	 "item_infused_raindrop",
 	 "item_quelling_blade", 
-	 "item_stout_shield", 
-	 "item_iron_talon",
-	 "item_poor_mans_shield",
 	 "item_magic_wand",
 	 "item_bottle",  
 	 "item_ring_of_aquila", 
@@ -348,11 +345,6 @@ function SellEarlyGameItem()
 						npcBot:ActionImmediate_SellItem(npcBot:GetItemInSlot(itemSlot));
 						break;
 					end	
-				elseif item == "item_stout_shield"  then
-					if not HasCGorABBuild() then
-						npcBot:ActionImmediate_SellItem(npcBot:GetItemInSlot(itemSlot));
-						break;
-					end
 				elseif item == "item_tpscroll" then
 					if HasItem(npcBot, "item_travel_boots") then
 						npcBot:ActionImmediate_SellItem(npcBot:GetItemInSlot(itemSlot));
@@ -691,22 +683,15 @@ if DotaTime() < 0 then
 	end
 	if  role.IsMelee(npcBot:GetAttackRange()) then
 		if role.IsCarry(npcBot:GetUnitName()) then
-			table.insert(npcBot.tableItemsToBuy , "item_stout_shield");
-			table.insert(temp , "item_stout_shield");
 			table.insert(npcBot.tableItemsToBuy , "item_quelling_blade");
 			table.insert(temp , "item_quelling_blade");
-		else
-			table.insert(npcBot.tableItemsToBuy , "item_stout_shield");
-			table.insert(temp , "item_stout_shield");
 		end
 	end
 end
 for _,it in pairs(purchase["items"])
 do	
-	if it ~= "item_poor_mans_shield" then
-		InsertToPurchaseTable(it)
-		table.insert(temp, it)
-	end
+	InsertToPurchaseTable(it)
+	table.insert(temp, it)
 end
 	
 --[[for _,i in pairs(npcBot.tableItemsToBuy )
