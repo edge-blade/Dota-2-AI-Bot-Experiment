@@ -71,7 +71,7 @@ ItemModule['earlyGameItem'] = {
 	 "item_clarity",
 	 "item_faerie_fire",
 	 "item_tango",  
-	 "item_flask", 
+	 "item_flask",  -- healing salve
 	 "item_infused_raindrop",
 	 "item_quelling_blade", 
 	 "item_magic_wand",
@@ -171,223 +171,137 @@ ItemModule["basic_items"] = {
 	"item_aghanims_shard";
 }
 
-ItemModule["item_abyssal_blade"] = { "item_basher"; "item_vanguard"; "item_recipe_abyssal_blade" }
+--------------------------
+-- Recipies by Category --
+--------------------------
 
-ItemModule["item_aether_lens"] = { "item_void_stone"; "item_energy_booster"; "item_recipe_aether_lens" }
-
-ItemModule["item_ultimate_scepter"] = { "item_point_booster"; "item_ogre_axe"; "item_staff_of_wizardry"; "item_blade_of_alacrity" }
-
-ItemModule["item_arcane_boots"] = { "item_boots"; "item_energy_booster"}
-
-ItemModule["item_armlet"] = { "item_helm_of_iron_will"; "item_gloves"; "item_blades_of_attack"; "item_recipe_armlet" }
-
-ItemModule["item_assault"] = { "item_platemail"; "item_hyperstone"; "item_recipe_assault"; "item_buckler" }
-
-ItemModule["item_bfury"] = { "item_quelling_blade"; "item_pers"; "item_broadsword"; "item_claymore" }
-
-ItemModule["item_black_king_bar"] = { "item_ogre_axe"; "item_mithril_hammer"; "item_recipe_black_king_bar" }
-
-ItemModule["item_blade_mail"] = {  "item_chainmail"; "item_broadsword"; "item_recipe_blade_mail" }
-
-ItemModule["item_bloodstone"] = { "item_soul_booster" ; "item_kaya"; "item_voodoo_mask" }
-
-ItemModule["item_bloodthorn"] = { "item_orchid"; "item_hyperstone"; "item_recipe_bloodthorn" }
-
-ItemModule["item_travel_boots"] = { "item_boots"; "item_recipe_travel_boots" }
-
-ItemModule["item_travel_boots_2"] = { "item_travel_boots"; "item_recipe_travel_boots" }
-
-ItemModule["item_bracer"] = { "item_gauntlets"; "item_circlet"; "item_recipe_bracer" }
-
-ItemModule["item_buckler"] = { "item_ring_of_protection"; "item_recipe_buckler" }
-
-ItemModule["item_butterfly"] = { "item_talisman_of_evasion"; "item_eagle"; "item_quarterstaff" }
-
-ItemModule["item_crimson_guard"] = { "item_vanguard"; "item_helm_of_iron_will"; "item_recipe_crimson_guard" }
-
-ItemModule["item_lesser_crit"] = { "item_broadsword"; "item_blades_of_attack"; "item_recipe_lesser_crit" }
-
-ItemModule["item_greater_crit"] = { "item_lesser_crit"; "item_demon_edge"; "item_recipe_greater_crit" }
-
-ItemModule["item_dagon"] = { "item_crown"; "item_staff_of_wizardry"; "item_recipe_dagon" }
-
-ItemModule["item_dagon_2"] = { "item_dagon"; "item_recipe_dagon" }
-
-ItemModule["item_dagon_3"] = { "item_dagon_2"; "item_recipe_dagon" }
-
-ItemModule["item_dagon_4"] = { "item_dagon_3"; "item_recipe_dagon" }
-
-ItemModule["item_dagon_5"] = { "item_dagon_4"; "item_recipe_dagon" }
-
-ItemModule["item_desolator"] = { "item_mithril_hammer"; "item_mithril_hammer"; "item_blight_stone" }
-
-ItemModule["item_diffusal_blade"] = { "item_blade_of_alacrity"; "item_blade_of_alacrity"; "item_robe"; "item_recipe_diffusal_blade" }
-
-ItemModule["item_diffusal_blade_2"] = { "item_diffusal_blade"; "item_recipe_diffusal_blade" }
-
-ItemModule["item_dragon_lance"] = { "item_boots_of_elves"; "item_boots_of_elves"; "item_ogre_axe" }
-
-ItemModule["item_ancient_janggo"] = { "item_wind_lace"; "item_belt_of_strength"; "item_robe"; "item_recipe_ancient_janggo" }
-
-ItemModule["item_echo_sabre"] = { "item_oblivion_staff"; "item_ogre_axe" }
-
-ItemModule["item_ethereal_blade"] = { "item_ghost"; "item_eagle" }
-
-ItemModule["item_cyclone"] = { "item_wind_lace"; "item_void_stone"; "item_staff_of_wizardry"; "item_recipe_cyclone" }
-
-ItemModule["item_skadi"] = { "item_point_booster"; "item_ultimate_orb"; "item_ultimate_orb" }
-
-ItemModule["item_force_staff"] = { "item_staff_of_wizardry"; "item_fluffy_hat"; "item_recipe_force_staff" }
-
-ItemModule["item_glimmer_cape"] = { "item_cloak"; "item_shadow_amulet"; "item_recipe_glimmer_cape" }
-
-ItemModule["item_guardian_greaves"] = { "item_arcane_boots"; "item_mekansm"; "item_buckler"; "item_recipe_guardian_greaves" }
-
-ItemModule["item_hand_of_midas"] = { "item_gloves"; "item_recipe_hand_of_midas" }
-
-ItemModule["item_headdress"] = { "item_ring_of_regen"; "item_recipe_headdress" }
-
-ItemModule["item_heart"] = { "item_vitality_booster"; "item_reaver"; "item_recipe_heart" }
-
-ItemModule["item_heavens_halberd"] = { "item_sange"; "item_talisman_of_evasion"; "item_recipe_heavens_halberd"}
-
-ItemModule["item_helm_of_the_dominator"] = { "item_helm_of_iron_will"; "item_crown"; "item_recipe_helm_of_the_dominator" }
-
-ItemModule["item_hood_of_defiance"] = { "item_ring_of_health"; "item_cloak"; "item_ring_of_regen" }
-
-ItemModule["item_hurricane_pike"] = { "item_dragon_lance"; "item_force_staff"; "item_recipe_hurricane_pike" }
-
--- ItemModule["item_iron_talon"] = { "item_quelling_blade"; "item_ring_of_protection"; "item_recipe_iron_talon" }
-
-ItemModule["item_sphere"] = { "item_pers"; "item_ultimate_orb"; "item_recipe_sphere" }
-
-ItemModule["item_lotus_orb"] = { "item_pers"; "item_platemail"; "item_energy_booster" }
-
-ItemModule["item_maelstrom"] = { "item_javelin"; "item_mithril_hammer" }
-
+-- Accessories
 ItemModule["item_magic_wand"] = { "item_branches"; "item_branches"; "item_magic_stick"; "item_recipe_magic_wand" }
-
-ItemModule["item_manta"] = { "item_yasha"; "item_ultimate_orb"; "item_recipe_manta" }
-
-ItemModule["item_mask_of_madness"] = { "item_lifesteal"; "item_quarterstaff" }
-
-ItemModule["item_medallion_of_courage"] = { "item_chainmail"; "item_sobi_mask"; "item_blight_stone" }
-
-ItemModule["item_mekansm"] = { "item_headdress"; "item_chainmail"; "item_recipe_mekansm" }
-
-ItemModule["item_mjollnir"] = { "item_maelstrom"; "item_hyperstone"; "item_recipe_mjollnir" }
-
-ItemModule["item_monkey_king_bar"] = { "item_blitz_knuckles"; "item_javelin"; "item_demon_edge"; "item_recipe_monkey_king_bar" }
-
-ItemModule["item_moon_shard"] = { "item_hyperstone"; "item_hyperstone"}
-
-ItemModule["item_necronomicon"] = { "item_sobi_mask"; "item_sobi_mask"; "item_belt_of_strength"; "item_recipe_necronomicon" }
-
-ItemModule["item_necronomicon_2"] = { "item_necronomicon"; "item_recipe_necronomicon" }
-
-ItemModule["item_necronomicon_3"] = { "item_necronomicon_2"; "item_recipe_necronomicon" }
-	    
+ItemModule["item_bracer"] = { "item_gauntlets"; "item_circlet"; "item_recipe_bracer" }
 ItemModule["item_null_talisman"] = { "item_mantle"; "item_circlet"; "item_recipe_null_talisman" }
-
-ItemModule["item_oblivion_staff"] = { "item_quarterstaff"; "item_robe"; "item_sobi_mask" }
-
-ItemModule["item_octarine_core"] = { "item_soul_booster"; "item_aether_lens" }
-
-ItemModule["item_orchid"] = { "item_oblivion_staff"; "item_oblivion_staff"; "item_recipe_orchid" }
-
-ItemModule["item_pers"] = { "item_ring_of_health"; "item_void_stone" }
-
-ItemModule["item_phase_boots"] = { "item_boots"; "item_chainmail"; "item_blades_of_attack" }
-
-ItemModule["item_pipe"] = { "item_hood_of_defiance"; "item_headdress"; "item_recipe_pipe" }
+ItemModule["item_wraith_band"] = { "item_slippers"; "item_circlet"; "item_recipe_wraith_band" }
+ItemModule["item_soul_ring"] = { "item_ring_of_protection"; "item_gauntlets"; "item_gauntlets"; "item_recipe_soul_ring" }
+ItemModule["item_orb_of_corrosion"] = { "item_blight_stone"; "item_orb_of_venom"; "item_fluffy_hat"; "item_recipe_orb_of_corrosion" }
+ItemModule["item_falcon_blade"] = { "item_fluffy_hat"; "item_sobi_mask"; "item_blades_of_attack"; "item_recipe_falcon_blade" }
 
 ItemModule["item_power_treads_agi"] = { "item_boots"; "item_boots_of_elves"; "item_gloves" }
-
 ItemModule["item_power_treads_int"] = { "item_boots"; "item_robe"; "item_gloves" }
-
 ItemModule["item_power_treads_str"] = { "item_boots"; "item_belt_of_strength"; "item_gloves" }
-
 ItemModule["item_power_treads"] = { "item_boots"; "item_belt_of_strength"; "item_gloves" }
 
-ItemModule["item_radiance"] = { "item_relic"; "item_recipe_radiance" }
+ItemModule["item_oblivion_staff"] = { "item_quarterstaff"; "item_robe"; "item_sobi_mask" }
+ItemModule["item_phase_boots"] = { "item_boots"; "item_chainmail"; "item_blades_of_attack" }
+ItemModule["item_pers"] = { "item_ring_of_health"; "item_void_stone" }
+ItemModule["item_mask_of_madness"] = { "item_lifesteal"; "item_quarterstaff" }
+ItemModule["item_hand_of_midas"] = { "item_gloves"; "item_recipe_hand_of_midas" }
+ItemModule["item_helm_of_the_dominator"] = { "item_helm_of_iron_will"; "item_crown"; "item_recipe_helm_of_the_dominator" }
+ItemModule["item_travel_boots"] = { "item_boots"; "item_recipe_travel_boots" }
+ItemModule["item_moon_shard"] = { "item_hyperstone"; "item_hyperstone"}
+ItemModule["item_helm_of_the_dominator_2"] = { "item_helm_of_the_dominator"; "item_ultimate_orb"; "item_recipe_helm_of_the_dominator_2" }
 
-ItemModule["item_rapier"] = { "item_relic"; "item_demon_edge" }
-
-ItemModule["item_refresher"] = { "item_pers"; "item_pers"; "item_recipe_refresher" }
-				
-ItemModule["item_ring_of_aquila"] = { "item_ring_of_basilius"; "item_crown" }
-			    
+-- Support
+ItemModule["item_buckler"] = { "item_ring_of_protection"; "item_recipe_buckler" }
+ItemModule["item_headdress"] = { "item_ring_of_regen"; "item_recipe_headdress" }
 ItemModule["item_ring_of_basilius"] = {  "item_sobi_mask" ; "item_recipe_ring_of_basilius" }
-				
-ItemModule["item_rod_of_atos"] = { "item_crown"; "item_crown"; "item_staff_of_wizardry"; "item_recipe_rod_of_atos" }
+ItemModule["item_urn_of_shadows"] = { "item_sobi_mask" ; "item_circlet"; "item_ring_of_protection"; "item_recipe_urn_of_shadows" }
+ItemModule["item_tranquil_boots"] = { "item_wind_lace"; "item_boots"; "item_ring_of_regen" }
+ItemModule["item_medallion_of_courage"] = { "item_chainmail"; "item_sobi_mask"; "item_blight_stone" }
+ItemModule["item_arcane_boots"] = { "item_boots"; "item_energy_booster"}
+ItemModule["item_ancient_janggo"] = { "item_wind_lace"; "item_belt_of_strength"; "item_robe"; "item_recipe_ancient_janggo" }
+ItemModule["item_mekansm"] = { "item_headdress"; "item_chainmail"; "item_recipe_mekansm" }
+ItemModule["item_holy_locket"] = { "item_magic_wand"; "item_headdress"; "item_fluffy_hat"; "item_energy_booster"; "item_recipe_holy_locket" }
+ItemModule["item_vladmir"] = { "item_ring_of_basilius"; "item_buckler"; "item_blades_of_attack"; "item_lifesteal"; "item_recipe_vladmir" }
+ItemModule["item_spirit_vessel"] = { "item_urn_of_shadows"; "item_vitality_booster"; "item_recipe_spirit_vessel" }
+ItemModule["item_pipe"] = { "item_hood_of_defiance"; "item_headdress"; "item_recipe_pipe" }
+ItemModule["item_recipe_boots_of_bearing"] = { "item_tranquil_boots"; "item_ancient_janggo"; "item_recipe_boots_of_bearing" }
+ItemModule["item_wraith_pact"] = { "item_vladmir"; "item_point_booster"; "item_recipe_wraith_pact" }
+ItemModule["item_guardian_greaves"] = { "item_arcane_boots"; "item_mekansm"; "item_buckler"; "item_recipe_guardian_greaves" }
 
-ItemModule["item_sange"] = { "item_belt_of_strength"; "item_ogre_axe"; "item_recipe_sange" }
-			    
-ItemModule["item_sange_and_yasha"] = { "item_yasha"; "item_sange" }
-
-ItemModule["item_satanic"] = { "item_lifesteal"; "item_reaver"; "item_claymore" }
-
-ItemModule["item_sheepstick"] = { "item_mystic_staff"; "item_ultimate_orb"; "item_void_stone" }
-
-ItemModule["item_invis_sword"] = { "item_shadow_amulet"; "item_broadsword"; "item_blitz_knuckles" }
-
-ItemModule["item_shivas_guard"] = { "item_platemail"; "item_mystic_staff"; "item_recipe_shivas_guard" }
-
-ItemModule["item_silver_edge"] = { "item_invis_sword"; "item_oblivion_staff"; "item_recipe_silver_edge" }
-
-ItemModule["item_basher"] = { "item_mithril_hammer"; "item_belt_of_strength"; "item_recipe_basher" }
-
+-- Magical
+ItemModule["item_veil_of_discord"] = { "item_crown"; "item_ring_of_basilius"; "item_recipe_veil_of_discord" }
+ItemModule["item_glimmer_cape"] = { "item_cloak"; "item_shadow_amulet"; "item_recipe_glimmer_cape" }
+ItemModule["item_force_staff"] = { "item_staff_of_wizardry"; "item_fluffy_hat"; "item_recipe_force_staff" }
+ItemModule["item_aether_lens"] = { "item_void_stone"; "item_energy_booster"; "item_recipe_aether_lens" }
+ItemModule["item_witch_blade"] = { "item_blitz_knuckles"; "item_chainmail"; "item_robe"; "item_recipe_witch_blade" }
 ItemModule["item_solar_crest"] = { "item_medallion_of_courage"; "item_wind_lace"; "item_crown"; "item_recipe_solar_crest" }
 
-ItemModule["item_soul_booster"] = { "item_point_booster"; "item_vitality_booster"; "item_energy_booster" }
+ItemModule["item_dagon"] = { "item_crown"; "item_staff_of_wizardry"; "item_recipe_dagon" }
+ItemModule["item_dagon_2"] = { "item_dagon"; "item_recipe_dagon" }
+ItemModule["item_dagon_3"] = { "item_dagon_2"; "item_recipe_dagon" }
+ItemModule["item_dagon_4"] = { "item_dagon_3"; "item_recipe_dagon" }
+ItemModule["item_dagon_5"] = { "item_dagon_4"; "item_recipe_dagon" }
 
-ItemModule["item_soul_ring"] = { "item_ring_of_protection"; "item_gauntlets"; "item_gauntlets"; "item_recipe_soul_ring" }
-
-ItemModule["item_tranquil_boots"] = { "item_wind_lace"; "item_boots"; "item_ring_of_regen" }
-
-ItemModule["item_urn_of_shadows"] = { "item_sobi_mask" ; "item_circlet"; "item_ring_of_protection"; "item_recipe_urn_of_shadows" }
-
-ItemModule["item_vanguard"] = { "item_vitality_booster"; "item_ring_of_health"  }
-
-ItemModule["item_veil_of_discord"] = { "item_crown"; "item_ring_of_basilius"; "item_recipe_veil_of_discord" }
-
-ItemModule["item_vladmir"] = { "item_ring_of_basilius"; "item_buckler"; "item_blades_of_attack"; "item_lifesteal"; "item_recipe_vladmir" }
-
-ItemModule["item_wraith_band"] = { "item_slippers"; "item_circlet"; "item_recipe_wraith_band" }
-
-ItemModule["item_yasha"] = { "item_boots_of_elves"; "item_blade_of_alacrity"; "item_recipe_yasha" }
-
----------- NEW ITEM BELOW ----------------
-ItemModule["item_meteor_hammer"] = { "item_crown"; "item_pers"; "item_recipe_meteor_hammer" }
---aeon disk
-ItemModule["item_aeon_disk"] = { "item_vitality_booster"; "item_energy_booster"; "item_recipe_aeon_disk" }
-
-ItemModule["item_spirit_vessel"] = { "item_urn_of_shadows"; "item_vitality_booster"; "item_recipe_spirit_vessel" }
-
-ItemModule["item_nullifier"] = { "item_helm_of_iron_will"; "item_relic" }
---kaya
-ItemModule["item_kaya"] = { "item_robe"; "item_staff_of_wizardry"; "item_recipe_kaya" }
---kaya and sange
-ItemModule["item_kaya_and_sange"] = { "item_sange"; "item_kaya" }
---yasha and kaya
-ItemModule["item_yasha_and_kaya"] = { "item_yasha"; "item_kaya" }
---item_holy_locket
-ItemModule["item_holy_locket"] = { "item_magic_wand"; "item_headdress"; "item_fluffy_hat"; "item_energy_booster"; "item_recipe_holy_locket" }
---Aghanims Scpeter Upgrade
+ItemModule["item_cyclone"] = { "item_wind_lace"; "item_void_stone"; "item_staff_of_wizardry"; "item_recipe_cyclone" }
+ItemModule["item_rod_of_atos"] = { "item_crown"; "item_crown"; "item_staff_of_wizardry"; "item_recipe_rod_of_atos" }
+ItemModule["item_orchid"] = { "item_oblivion_staff"; "item_oblivion_staff"; "item_recipe_orchid" }
+ItemModule["item_ultimate_scepter"] = { "item_point_booster"; "item_ogre_axe"; "item_staff_of_wizardry"; "item_blade_of_alacrity" }
+ItemModule["item_refresher"] = { "item_pers"; "item_pers"; "item_recipe_refresher" }
+ItemModule["item_octarine_core"] = { "item_soul_booster"; "item_aether_lens" }
+ItemModule["item_sheepstick"] = { "item_mystic_staff"; "item_ultimate_orb"; "item_void_stone" }
 ItemModule["item_ultimate_scepter_2"] = { "item_ultimate_scepter"; "item_recipe_ultimate_scepter_2" }
-
----------- 7.28 NEW ITEMS ---------------
-ItemModule["item_falcon_blade"] = { "item_fluffy_hat"; "item_sobi_mask"; "item_blades_of_attack"; "item_recipe_falcon_blade" }
-ItemModule["item_orb_of_corrosion"] = { "item_blight_stone"; "item_orb_of_venom"; "item_fluffy_hat"; "item_recipe_orb_of_corrosion" }
-ItemModule["item_witch_blade"] = { "item_blitz_knuckles"; "item_chainmail"; "item_robe"; "item_recipe_witch_blade" }
 ItemModule["item_gungir"] = { "item_maelstrom"; "item_rod_of_atos"; "item_recipe_gungir" }
-ItemModule["item_mage_slayer"] = { "item_cloak"; "item_blade_of_alacrity"; "item_claymore"; "item_recipe_mage_slayer" }
+ItemModule["item_revenants_brooch"] = { "item_witch_blade"; "item_mystic_staff"; "item_recipe_revenants_brooch" }
+ItemModule["item_wind_waker"] = { "item_cyclone"; "item_mystic_staff"; "item_recipe_wind_waker" }
+
+-- Armor
+ItemModule["item_hood_of_defiance"] = { "item_ring_of_health"; "item_cloak"; "item_ring_of_regen" }
+ItemModule["item_vanguard"] = { "item_vitality_booster"; "item_ring_of_health"  }
+ItemModule["item_blade_mail"] = {  "item_chainmail"; "item_broadsword"; "item_recipe_blade_mail" }
+ItemModule["item_aeon_disk"] = { "item_vitality_booster"; "item_energy_booster"; "item_recipe_aeon_disk" }
+ItemModule["item_soul_booster"] = { "item_point_booster"; "item_vitality_booster"; "item_energy_booster" }
 ItemModule["item_eternal_shroud"] = { "item_hood_of_defiance"; "item_voodoo_mask"; "item_recipe_eternal_shroud" }
-ItemModule["item_helm_of_the_dominator_2"] = { "item_helm_of_the_dominator"; "item_ultimate_orb"; "item_recipe_helm_of_the_dominator_2" }
+ItemModule["item_crimson_guard"] = { "item_vanguard"; "item_helm_of_iron_will"; "item_recipe_crimson_guard" }
+ItemModule["item_lotus_orb"] = { "item_pers"; "item_platemail"; "item_energy_booster" }
+ItemModule["item_black_king_bar"] = { "item_ogre_axe"; "item_mithril_hammer"; "item_recipe_black_king_bar" }
+ItemModule["item_hurricane_pike"] = { "item_dragon_lance"; "item_force_staff"; "item_recipe_hurricane_pike" }
+ItemModule["item_bloodstone"] = { "item_soul_booster" ; "item_kaya"; "item_voodoo_mask" }
+ItemModule["item_sphere"] = { "item_pers"; "item_ultimate_orb"; "item_recipe_sphere" }
+ItemModule["item_manta"] = { "item_yasha"; "item_ultimate_orb"; "item_recipe_manta" }
+ItemModule["item_shivas_guard"] = { "item_platemail"; "item_mystic_staff"; "item_recipe_shivas_guard" }
+ItemModule["item_heart"] = { "item_vitality_booster"; "item_reaver"; "item_recipe_heart" }
+ItemModule["item_assault"] = { "item_platemail"; "item_hyperstone"; "item_recipe_assault"; "item_buckler" }
+
+-- Weapons
+ItemModule["item_lesser_crit"] = { "item_broadsword"; "item_blades_of_attack"; "item_recipe_lesser_crit" }
+ItemModule["item_meteor_hammer"] = { "item_crown"; "item_pers"; "item_recipe_meteor_hammer" }
+ItemModule["item_armlet"] = { "item_helm_of_iron_will"; "item_gloves"; "item_blades_of_attack"; "item_recipe_armlet" }
+ItemModule["item_basher"] = { "item_mithril_hammer"; "item_belt_of_strength"; "item_recipe_basher" }
+ItemModule["item_invis_sword"] = { "item_shadow_amulet"; "item_broadsword"; "item_blitz_knuckles" }
+ItemModule["item_desolator"] = { "item_mithril_hammer"; "item_mithril_hammer"; "item_blight_stone" }
+ItemModule["item_bfury"] = { "item_quelling_blade"; "item_pers"; "item_broadsword"; "item_claymore" }
+ItemModule["item_ethereal_blade"] = { "item_ghost"; "item_eagle" }
+ItemModule["item_nullifier"] = { "item_helm_of_iron_will"; "item_relic" }
+ItemModule["item_butterfly"] = { "item_talisman_of_evasion"; "item_eagle"; "item_quarterstaff" }
+ItemModule["item_monkey_king_bar"] = { "item_blitz_knuckles"; "item_javelin"; "item_demon_edge"; "item_recipe_monkey_king_bar" }
+ItemModule["item_radiance"] = { "item_relic"; "item_recipe_radiance" }
+ItemModule["item_greater_crit"] = { "item_lesser_crit"; "item_demon_edge"; "item_recipe_greater_crit" }
+ItemModule["item_silver_edge"] = { "item_invis_sword"; "item_oblivion_staff"; "item_recipe_silver_edge" }
+ItemModule["item_rapier"] = { "item_relic"; "item_demon_edge" }
+ItemModule["item_abyssal_blade"] = { "item_basher"; "item_vanguard"; "item_recipe_abyssal_blade" }
+ItemModule["item_bloodthorn"] = { "item_orchid"; "item_hyperstone"; "item_recipe_bloodthorn" }
+
+-- Artifacts
+ItemModule["item_dragon_lance"] = { "item_boots_of_elves"; "item_boots_of_elves"; "item_ogre_axe" }
+ItemModule["item_kaya"] = { "item_robe"; "item_staff_of_wizardry"; "item_recipe_kaya" }
+ItemModule["item_sange"] = { "item_belt_of_strength"; "item_ogre_axe"; "item_recipe_sange" }
+ItemModule["item_yasha"] = { "item_boots_of_elves"; "item_blade_of_alacrity"; "item_recipe_yasha" }
+ItemModule["item_mage_slayer"] = { "item_cloak"; "item_blade_of_alacrity"; "item_claymore"; "item_recipe_mage_slayer" }
+ItemModule["item_diffusal_blade"] = { "item_blade_of_alacrity"; "item_blade_of_alacrity"; "item_robe"; "item_recipe_diffusal_blade" }
+ItemModule["item_maelstrom"] = { "item_javelin"; "item_mithril_hammer" }
+ItemModule["item_echo_sabre"] = { "item_oblivion_staff"; "item_ogre_axe" }
+ItemModule["item_heavens_halberd"] = { "item_sange"; "item_talisman_of_evasion"; "item_recipe_heavens_halberd"}
+ItemModule["item_kaya_and_sange"] = { "item_sange"; "item_kaya" }
+ItemModule["item_sange_and_yasha"] = { "item_yasha"; "item_sange" }
+ItemModule["item_yasha_and_kaya"] = { "item_yasha"; "item_kaya" }
+ItemModule["item_satanic"] = { "item_lifesteal"; "item_reaver"; "item_claymore" }
+ItemModule["item_skadi"] = { "item_point_booster"; "item_ultimate_orb"; "item_ultimate_orb" }
+ItemModule["item_mjollnir"] = { "item_maelstrom"; "item_hyperstone"; "item_recipe_mjollnir" }
 ItemModule["item_overwhelming_blink"] = { "item_blink"; "item_reaver"; "item_recipe_overwhelming_blink" }
 ItemModule["item_swift_blink"] = { "item_blink"; "item_eagle"; "item_recipe_swift_blink" }
 ItemModule["item_arcane_blink"] = { "item_blink"; "item_mystic_staff"; "item_recipe_arcane_blink" }
-ItemModule["item_wind_waker"] = { "item_cyclone"; "item_mystic_staff"; "item_recipe_wind_waker" }
+
+-- Uncategorized
+ItemModule["item_travel_boots_2"] = { "item_travel_boots"; "item_recipe_travel_boots" }
 
 --Normalize some item names 
 function ItemModule.NormItemName(item_name)
