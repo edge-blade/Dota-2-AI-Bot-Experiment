@@ -9,9 +9,9 @@ X["items"] = {
 	"item_magic_wand",
 	"item_boots",
 	"item_medallion_of_courage",
-	"item_necronomicon_3",
 	"item_solar_crest",
 	"item_vladmir",
+	"item_helm_of_the_overlord",
 	"item_ultimate_scepter_2",
 	"item_heavens_halberd",
 	"item_travel_boots"

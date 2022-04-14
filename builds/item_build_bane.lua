@@ -11,7 +11,9 @@ X["items"] = {
 	"item_aether_lens",
 	"item_force_staff",
 	"item_glimmer_cape",
-	"item_meteor_hammer",
+	"item_boots_of_bearing",
+	"item_octarine_core",
+	--"item_aghanims_shard",
 	"item_ultimate_scepter_2",
 	"item_sheepstick",
 	"item_hurricane_pike"

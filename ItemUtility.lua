@@ -197,7 +197,6 @@ ItemModule["item_hand_of_midas"] = { "item_gloves"; "item_recipe_hand_of_midas" 
 ItemModule["item_helm_of_the_dominator"] = { "item_helm_of_iron_will"; "item_crown"; "item_recipe_helm_of_the_dominator" }
 ItemModule["item_travel_boots"] = { "item_boots"; "item_recipe_travel_boots" }
 ItemModule["item_moon_shard"] = { "item_hyperstone"; "item_hyperstone"}
-ItemModule["item_helm_of_the_dominator_2"] = { "item_helm_of_the_dominator"; "item_ultimate_orb"; "item_recipe_helm_of_the_dominator_2" }
 
 -- Support
 ItemModule["item_buckler"] = { "item_ring_of_protection"; "item_recipe_buckler" }
@@ -216,6 +215,7 @@ ItemModule["item_pipe"] = { "item_hood_of_defiance"; "item_headdress"; "item_rec
 ItemModule["item_recipe_boots_of_bearing"] = { "item_tranquil_boots"; "item_ancient_janggo"; "item_recipe_boots_of_bearing" }
 ItemModule["item_wraith_pact"] = { "item_vladmir"; "item_point_booster"; "item_recipe_wraith_pact" }
 ItemModule["item_guardian_greaves"] = { "item_arcane_boots"; "item_mekansm"; "item_buckler"; "item_recipe_guardian_greaves" }
+ItemModule["item_helm_of_the_overlord"] = { "item_helm_of_the_dominator"; "item_vladmir"; "item_recipe_helm_of_the_overlord" }
 
 -- Magical
 ItemModule["item_veil_of_discord"] = { "item_crown"; "item_ring_of_basilius"; "item_recipe_veil_of_discord" }

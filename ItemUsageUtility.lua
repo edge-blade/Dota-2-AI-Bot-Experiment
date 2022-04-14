@@ -2606,8 +2606,8 @@ end
 ItemUsageModule.Use['item_eternal_shroud'] = function(item, bot, mode, extra_range)
 	return ItemUsageModule.Use['item_hood_of_defiance'](item, bot, mode, extra_range);
 end
---item_helm_of_the_dominator_2
-ItemUsageModule.Use['item_helm_of_the_dominator_2'] = function(item, bot, mode, extra_range)
+--item_helm_of_the_overlord
+ItemUsageModule.Use['item_helm_of_the_overlord'] = function(item, bot, mode, extra_range)
 	return ItemUsageModule.Use['item_helm_of_the_dominator'](item, bot, mode, extra_range);
 end
 --item_overwhelming_blink

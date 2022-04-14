@@ -10,7 +10,7 @@ X["items"] = {
 	"item_phase_boots",
 	"item_blade_mail",
 	"item_holy_locket",
-	"item_kaya_and_sange",
+	"item_helm_of_the_overlord",
 	"item_lotus_orb",
 	"item_ultimate_scepter_2",
 	"item_shivas_guard"

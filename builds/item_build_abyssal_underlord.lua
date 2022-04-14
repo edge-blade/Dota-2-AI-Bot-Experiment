@@ -11,6 +11,7 @@ X["items"] = {
 	"item_vanguard",
 	"item_pipe",
 	"item_crimson_guard",
+	"item_guardian_greaves",
 	"item_lotus_orb",
 	"item_shivas_guard",
 	"item_ultimate_scepter_2",
