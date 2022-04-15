@@ -203,11 +203,11 @@ local function ConsiderE()
 	local tableNearbyEnemyHeroes = bot:GetNearbyHeroes( nCastRange+200, true, BOT_MODE_NONE );
 	
 	-- If we're seriously retreating, see if we can land a slow on someone who's damaged us recently
-	if mutil.IsRetreating(bot)
+	if mutils.IsRetreating(bot)
 	then
 		for _,npcEnemy in pairs( tableNearbyEnemyHeroes )
 		do
-			if ( bot:WasRecentlyDamagedByHero( npcEnemy, 2.0 ) and mutil.CanCastOnNonMagicImmune(npcEnemy) ) 
+			if ( bot:WasRecentlyDamagedByHero( npcEnemy, 2.0 ) and mutils.CanCastOnNonMagicImmune(npcEnemy) ) 
 			then
 				return BOT_ACTION_DESIRE_HIGH, npcEnemy;
 			end
@@ -215,10 +215,10 @@ local function ConsiderE()
 	end
 	
 	-- If we're going after someone
-	if mutil.IsGoingOnSomeone(bot) and bot:GetMaxHealth() - bot:GetHealth() > nDamage
+	if mutils.IsGoingOnSomeone(bot) and bot:GetMaxHealth() - bot:GetHealth() > nDamage
 	then
 		local npcTarget = bot:GetTarget();
-		if mutil.IsValidTarget(npcTarget) and mutil.CanCastOnNonMagicImmune(npcTarget)and mutil.IsInRange(npcTarget, bot, nCastRange + 200)
+		if mutils.IsValidTarget(npcTarget) and mutils.CanCastOnNonMagicImmune(npcTarget)and mutils.IsInRange(npcTarget, bot, nCastRange + 200)
 		and not mutils.IsDisabled(true, npcTarget)
 		then
 			return BOT_ACTION_DESIRE_HIGH, npcTarget;

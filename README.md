@@ -20,7 +20,7 @@ https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/Abiliti
 
 ---
 #### Usage / Testing
-Place all script files in Steam\SteamApps\common\dota 2 beta\game\dota\scripts\vscripts\bots, and select local dev scripts in the game.
+Place all script files in `Steam\SteamApps\common\dota 2 beta\game\dota\scripts\vscripts\bots`, and select `default bots` in the practice.
 
 ---
 #### Basic Breakdown
