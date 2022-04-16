@@ -1797,7 +1797,7 @@ ItemUsageModule.Use['item_lotus_orb'] = function(item, bot, mode, extra_range)
 			end
 			if ItemUsageModule.CanDodgeProjectile(bot, 250) == true 
 			then
-				return BOT_ACTION_DESIRE_ABSOLUTE, bo, 'unit';
+				return BOT_ACTION_DESIRE_ABSOLUTE, bot, 'unit';
 			end
 		end
 	end
@@ -1996,6 +1996,8 @@ ItemUsageModule.Use['item_abyssal_blade'] = function(item, bot, mode, extra_rang
 			and mutil.CanCastOnNonMagicImmune(tableNearbyEnemyHeroes[1]) == true
 			and mutil.IsDisabled(true, tableNearbyEnemyHeroes[1]) == false
 		then	
+			local loc = mutil.GetEscapeLoc();
+			local furthestUnit = mutil.GetClosestEnemyUnitToLocation(bot, nCastRange, loc);
 			return BOT_ACTION_DESIRE_ABSOLUTE, furthestUnit, 'unit';
 		end
 	end

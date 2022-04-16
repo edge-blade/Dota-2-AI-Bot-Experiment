@@ -61,7 +61,7 @@ end
 function Think()
 	
 	npcBot:Action_MoveToLocation(preferedSS);
-	return
+	return nil;
 	
 end
 
@@ -104,7 +104,7 @@ function HaveItemToSell()
 					break;
 				end
 			elseif item == "item_ancient_janggo" then
-				local jg = bot:GetItemInSlot(itemSlot);
+				local jg = npcBot:GetItemInSlot(itemSlot);
 				if jg~=nil and jg:GetCurrentCharges() == 0 and #npcBot.itemToBuy <= 3 then
 					slotToSell = itemSlot;
 					break;

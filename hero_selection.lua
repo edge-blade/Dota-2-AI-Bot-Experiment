@@ -606,7 +606,7 @@ function IsUnavailableHero(name)
 	return false;
 end
 --Check if a hero hasn't implemented yet
-function IsUnImplementedHeroes()
+function IsUnImplementedHeroes(name)
 	for _,unh in pairs(UnImplementedHeroes)
 	do
 		if name == unh then

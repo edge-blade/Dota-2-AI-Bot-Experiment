@@ -970,7 +970,7 @@ function U.GetFurthestUnitToLocationFrommAll(hUnit, nRange, vLoc)
 	botDist, furthestUnit = U.GetUnitWithMaxDistanceToLoc(hUnit, aCreeps, furthestUnit, botDist, vLoc);
 	botDist, furthestUnit = U.GetUnitWithMaxDistanceToLoc(hUnit, eCreeps, furthestUnit, botDist, vLoc);
 	
-	if furthestUnit ~= bot then
+	if furthestUnit ~= nil then
 		return furthestUnit;
 	end
 	
@@ -991,7 +991,7 @@ function U.GetClosestUnitToLocationFrommAll(hUnit, nRange, vLoc)
 	botDist, closestUnit = U.GetUnitWithMinDistanceToLoc(hUnit, aCreeps, closestUnit, botDist, vLoc);
 	botDist, closestUnit = U.GetUnitWithMinDistanceToLoc(hUnit, eCreeps, closestUnit, botDist, vLoc);
 	
-	if closestUnit ~= bot then
+	if closestUnit ~= nil then
 		return closestUnit;
 	end
 	
@@ -1029,7 +1029,7 @@ function U.GetClosestEnemyUnitToLocation(hUnit, nRange, vLoc)
 	botDist, closestUnit = U.GetUnitWithMinDistanceToLoc(hUnit, eHeroes, closestUnit, botDist, vLoc);
 	botDist, closestUnit = U.GetUnitWithMinDistanceToLoc(hUnit, eCreeps, closestUnit, botDist, vLoc);
 	
-	if closestUnit ~= bot then
+	if closestUnit ~= nil then
 		return closestUnit;
 	end
 	

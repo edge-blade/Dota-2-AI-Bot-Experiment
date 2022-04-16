@@ -141,9 +141,12 @@ function ConsiderE()
 	if mutil.IsRetreating(npcBot)
 	then
 		local tableNearbyEnemyHeroes = npcBot:GetNearbyHeroes( distance, true, BOT_MODE_NONE );
-		if IsNightTime() and npcBot:WasRecentlyDamagedByHero( npcEnemy, 2.0 ) and not IsLocationPassable(npcBot:GetXUnitsInFront(300)) 
-		then
-			return BOT_ACTION_DESIRE_MODERATE;
+		for _,npcEnemy in pairs( tableNearbyEnemyHeroes )
+		do
+			if IsNightTime() and npcBot:WasRecentlyDamagedByHero( npcEnemy, 2.0 ) and not IsLocationPassable(npcBot:GetXUnitsInFront(300)) 
+			then
+				return BOT_ACTION_DESIRE_MODERATE;
+			end
 		end
 	end
 	

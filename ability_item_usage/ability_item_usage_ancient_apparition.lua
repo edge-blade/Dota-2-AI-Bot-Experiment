@@ -236,7 +236,7 @@ function ConsiderIceVortex()
 		local tableNearbyEnemyHeroes = npcBot:GetNearbyHeroes( 1200, true, BOT_MODE_NONE );
 		for _,npcEnemy in pairs( tableNearbyEnemyHeroes )
 		do
-			if ( mutil.IsInRange(npcTarget, npcBot, nCastRange+200) and not npcEnemy:HasModifier("modifier_ice_vortex") ) 
+			if ( mutil.IsInRange(npcEnemy, npcBot, nCastRange+200) and not npcEnemy:HasModifier("modifier_ice_vortex") ) 
 			then
 				return BOT_ACTION_DESIRE_MODERATE, npcEnemy:GetExtrapolatedLocation(nCastPoint);
 			end

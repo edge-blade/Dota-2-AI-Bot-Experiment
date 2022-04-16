@@ -48,7 +48,8 @@ function IsHawk(unit_name)
 end
 
 function HawkThink(bot, hMinionUnit)
-	return
+	-- TODO
+	return nil
 end
  
 function IsTornado(unit_name)
@@ -707,7 +708,9 @@ function CantBeControlled(unit_name)
 end
 
 function CantBeControlledThink(hMinionUnit)
-	return
+
+	-- TODO
+	return nil;
 end
 
 -----------MINION WITH SKILLS

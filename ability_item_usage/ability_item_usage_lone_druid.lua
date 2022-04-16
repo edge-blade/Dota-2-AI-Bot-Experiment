@@ -146,6 +146,7 @@ function ConsiderOverpower()
 		local tableNearbyEnemyTowers = npcBot:GetNearbyTowers( 1000, true );
 		local tableNearbyEnemyBarracks = npcBot:GetNearbyBarracks( 1000, true );
 		local EnemyAncient = GetAncient( GetOpposingTeam() );
+		local npcTarget = npcBot:GetAttackTarget();
 		if tableNearbyEnemyTowers ~= nil or tableNearbyEnemyBarracks ~= nil or abilityOP:GetLevel() == 4 or
 			( EnemyAncient ~= nil and mutil.IsInRange(npcTarget, npcBot, attackRange+200) )
 		then

@@ -370,7 +370,7 @@ function ConsiderTempestDouble()
 		local tableNearbyEnemyHeroes = npcBot:GetNearbyHeroes( 1000, true, BOT_MODE_NONE );
 		for _,npcEnemy in pairs( tableNearbyEnemyHeroes )
 		do
-			if mutil.IsInRange(npcTarget, npcBot, 1000)
+			if mutil.IsInRange(npcEnemy, npcBot, 1000)
 			then
 				return BOT_ACTION_DESIRE_MODERATE;
 			end

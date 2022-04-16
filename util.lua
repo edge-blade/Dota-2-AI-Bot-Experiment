@@ -212,8 +212,6 @@ function utilsModule.PrintMode(mod)
 		print("BOT_MODE_TEAM_ROAM ")		
 	elseif mod == BOT_MODE_FARM  then	
 		print("BOT_MODE_FARM ")		
-	elseif mod == BOT_MODE_ASSEMBLE_WITH_HUMANS  then	
-		print("BOT_MODE_ASSEMBLE_WITH_HUMANS ")	
 	elseif mod == BOT_MODE_DEFEND_ALLY  then	
 		print("BOT_MODE_DEFEND_ALLY ")
 	elseif mod == BOT_MODE_EVASIVE_MANEUVERS  then	

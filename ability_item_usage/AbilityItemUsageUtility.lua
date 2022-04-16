@@ -55,7 +55,7 @@ function U.GetLowestHPUnit(tUnits, bIgnoreImmune)
 	for _,unit in pairs(tUnits)
 	do
 		local hp = unit:GetHealth()
-		if hp < lowestHP and ( bIgnoreImmune or ( not bNotMagicImmune and not unit:IsMagicImmune() ) ) then
+		if hp < lowestHP and ( bIgnoreImmune or ( not bIgnoreImmune and not unit:IsMagicImmune() ) ) then
 			lowestHP   = hp;
 			lowestUnit = unit;
 		end

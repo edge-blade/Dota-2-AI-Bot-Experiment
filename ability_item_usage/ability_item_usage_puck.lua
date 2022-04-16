@@ -253,7 +253,7 @@ local function ConsiderD()
 						if pr.ability:GetName() == "puck_illusory_orb" then
 							local ProjTgt = GetUnitToLocationDistance(target, pr.location);
 							local ProjBot = GetUnitToLocationDistance(bot, pr.location);
-							local TgtBot = GetUnitToUnitDistance(bot, TgtBot);
+							local TgtBot = GetUnitToUnitDistance(bot, bot.GetLocation());
 							if ProjBot > TgtBot and ProjTgt < nRadius - 50 then
 								return BOT_ACTION_DESIRE_MODERATE;
 							end
@@ -271,7 +271,7 @@ local function ConsiderD()
 							if pr.ability:GetName() == "puck_illusory_orb" then
 								local ProjTgt = GetUnitToLocationDistance(target, pr.location);
 								local ProjBot = GetUnitToLocationDistance(bot, pr.location);
-								local TgtBot = GetUnitToUnitDistance(bot, TgtBot);
+								local TgtBot = GetUnitToUnitDistance(bot, bot.GetLocation());
 								if ProjBot > TgtBot and ProjTgt < 0.5*nRange then
 									return BOT_ACTION_DESIRE_MODERATE;
 								end

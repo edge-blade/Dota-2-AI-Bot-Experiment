@@ -256,7 +256,7 @@ function ConsiderR()
 			local locationAoE = bot:FindAoELocation( true, true, bot:GetLocation(), nCastRange2, nRadius2, 0, 0 );
 			if ( locationAoE.count >= 2 ) then
 				local target = mutils.GetVulnerableUnitNearLoc(true, true, nCastRange2, nRadius2, locationAoE.targetloc, bot);
-				if target ~= nil and mutils.IsInRange(target, bot, nCastRange2/2) == fasle and mutils.IsInRange(target, bot, nCastRange2-200) 
+				if target ~= nil and mutils.IsInRange(target, bot, nCastRange2/2) == false and mutils.IsInRange(target, bot, nCastRange2-200) 
 				then
 					return BOT_ACTION_DESIRE_HIGH;
 				end

@@ -239,7 +239,7 @@ function ConsiderFireblast()
 		local sunderTarget = mutil.GetMostHPPercent(tableNearbyEnemyHeroes, true);
 		if ( sunderTarget ~= nil  )
 		then
-			return BOT_ACTION_DESIRE_HIGH, npcMostHealthyEnemy;
+			return BOT_ACTION_DESIRE_HIGH, sunderTarget;
 		end
 	end
 	

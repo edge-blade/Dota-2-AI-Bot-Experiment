@@ -121,7 +121,7 @@ function ConsiderOverwhelmingOdds()
 		local tableNearbyEnemyHeroes = npcBot:GetNearbyHeroes( nLength, true, BOT_MODE_NONE );
 		for _,npcEnemy in pairs( tableNearbyEnemyHeroes )
 		do
-			if ( npcBot:WasRecentlyDamagedByHero( npcEnemy, 2.0 ) and  mutil.IsInRange(npcTarget, npcBot, nLength) ) 
+			if ( npcBot:WasRecentlyDamagedByHero( npcEnemy, 2.0 ) and  mutil.IsInRange(npcEnemy, npcBot, nLength) ) 
 			then
 				return BOT_ACTION_DESIRE_MODERATE, npcEnemy:GetLocation();
 			end

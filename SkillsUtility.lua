@@ -539,7 +539,7 @@ function X.ConsiderNoTarget(ability)
 		return BOT_ACTION_DESIRE_NONE;
 		
 	else
-		if X.IsRetreating(npcBot) and npcBot:WasRecentlyDamagedByHero( npcEnemy, 3.0 )
+		if X.IsRetreating(npcBot) and npcBot:WasRecentlyDamagedByAnyHero(3.0)
 		then
 			local tableNearbyEnemyHeroes = npcBot:GetNearbyHeroes( nRadius, true, BOT_MODE_NONE );
 			if tableNearbyEnemyHeroes ~= nil and #tableNearbyEnemyHeroes > 0 then

@@ -26,13 +26,6 @@ function U.CantUseAbility(hUnit)
 	    or hUnit:HasModifier("modifier_doom_bringer_doom") or hUnit:HasModifier('modifier_item_forcestaff_active')
 end
 
-function U.IsTaunted(hUnit)
-	return hUnit:HasModifier("modifier_axe_berserkers_call") 
-	    or hUnit:HasModifier("modifier_legion_commander_duel") 
-	    or hUnit:HasModifier("modifier_winter_wyvern_winters_curse") 
-		or hUnit:HasModifier(" modifier_winter_wyvern_winters_curse_aura");
-end
-
 function U.IsRetreating(hUnit)
 	return hUnit:GetActiveMode() == BOT_MODE_RETREAT 
 	   and hUnit:GetActiveModeDesire() >= BOT_MODE_DESIRE_HIGH 
@@ -287,7 +280,7 @@ function U.GetClosestAlly(hUnit, hTarget, nRadius)
 			end
 		end
 	end
-	return weakest;
+	return closest;
 end
 
 function U.GetDisabledAlly(hUnit, nRadius)

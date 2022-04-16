@@ -9,7 +9,7 @@ function U.GetNumEnemyAlive()
 	local tIds = {};
 	for i,id in pairs(enemyIds) do
 		if IsHeroAlive(id) then
-			table.insert(alive, id);
+			table.insert(tIds, id);
 		end	
 	end	
 	return tIds;

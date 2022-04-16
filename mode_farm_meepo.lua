@@ -7,6 +7,7 @@ local meepoStatus = require(GetScriptDirectory() .."/meepo_status" )
 
 STATE_IDLE = "STATE_IDLE"
 STATE_MOVING_TOCAMP = "STATE_MOVING_TOCAMP"
+STATE_MOVING_TOSTACK = "STATE_MOVING_TOSTACK"
 STATE_STACKING_CAMP = "STATE_STACKING_CAMP"
 STATE_ATTACKING_CAMP = "STATE_ATTACKING_CAMP"
 
@@ -77,7 +78,7 @@ function GetDesire()
 	--don't leave fights
 	local tableNearbyAttackingAlliedHeroes = npcBot:GetNearbyHeroes( 1300, false, BOT_MODE_NONE );
 	for _,v in pairs(tableNearbyAttackingAlliedHeroes) do
-		if (v:GetActiveMode() == BOT_MODE_ATTACKING or
+		if (v:GetActiveMode() == BOT_MODE_ATTACK or
 			v:GetActiveMode() == BOT_MODE_RETREAT or
 			v:GetActiveMode() == BOT_MODE_DEFEND_ALLY)
 		then
@@ -173,7 +174,7 @@ function Think()
 		local campsICanHandle = utils.deepcopy(jungleStatus.GetJungle(team))
 		if campsICanHandle ~= nil then
 			--utils.print_r(campsICanHandle)
-			camplvl = CAMP_EASY
+			local camplvl = CAMP_EASY
 			if level > 4 then camplvl = CAMP_MEDIUM end
 			if level > 8 then camplvl = CAMP_HARD end
 			if level > 13 then camplvl = CAMP_ANCIENT end

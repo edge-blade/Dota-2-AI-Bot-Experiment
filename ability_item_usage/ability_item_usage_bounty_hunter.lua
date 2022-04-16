@@ -123,7 +123,7 @@ function ConsiderQ()
 		if mutil.IsValidTarget(npcTarget) and mutil.CanCastOnNonMagicImmune(npcTarget) 
 		then
 			if mutil.IsInRange(npcTarget, npcBot, nCastRange + 200) then
-				return BOT_ACTION_DESIRE_HIGH, npcEnemy;
+				return BOT_ACTION_DESIRE_HIGH, npcTarget;
 			elseif npcTarget:HasModifier('modifier_bounty_hunter_track') 
 			then
 				for i=1, #tableNearbyCreeps do
