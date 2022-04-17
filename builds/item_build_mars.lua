@@ -14,7 +14,8 @@ X["items"] = {
 	"item_pipe",
 	"item_black_king_bar",
 	"item_ultimate_scepter_2",
-	"item_lotus_orb"
+	"item_lotus_orb",
+	"item_wraith_pact"
 };			
 
 X["builds"] = {

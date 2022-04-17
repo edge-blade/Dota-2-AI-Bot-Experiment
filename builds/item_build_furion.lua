@@ -11,12 +11,12 @@ X["items"] = {
 	"item_invis_sword",
 	"item_orchid",
 	"item_maelstrom",
-	"item_bloodthorn",
+	"item_witch_blade",
 	"item_black_king_bar",
 	"item_mjollnir",
 	"item_silver_edge",
 	"item_ultimate_scepter_2",
-	"item_sheepstick"
+	"item_bloodthorn"
 };			
 
 X["builds"] = {

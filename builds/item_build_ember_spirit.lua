@@ -11,6 +11,7 @@ X["items"] = {
 	"item_maelstrom",
 	"item_yasha_and_kaya",
 	"item_lesser_crit",
+	"item_aghanims_shard",
 	"item_shivas_guard",
 	"item_greater_crit",
 	"item_ultimate_scepter_2",

@@ -12,7 +12,9 @@ X["items"] = {
 	"item_holy_locket",
 	"item_glimmer_cape",
 	"item_cyclone",
+	"item_wind_waker",
 	"item_ultimate_scepter_2",
+	"item_aghanims_shard",
 	"item_force_staff",
 	"item_hurricane_pike",
 };			

@@ -10,6 +10,7 @@ X["items"] = {
 	"item_arcane_boots",
 	"item_blink",
 	"item_ultimate_scepter",
+	"item_aghanims_shard",
 	"item_force_staff",
 	"item_kaya_and_sange",
 	"item_cyclone",

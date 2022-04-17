@@ -10,6 +10,7 @@ X["items"] = {
 	"item_power_treads_str",
 	"item_armlet",
 	"item_echo_sabre",
+	"item_aghanims_shard",
 	"item_black_king_bar",
 	"item_manta",
 	"item_heart",

@@ -10,9 +10,11 @@ X["items"] = {
 	"item_mekansm",
 	"item_blink",
 	"item_black_king_bar",
+	"item_aghanims_shard",
 	"item_guardian_greaves",
 	"item_ultimate_scepter",
 	"item_sheepstick",
+	"item_arcane_blink",
 	"item_ultimate_scepter_2",
 	"item_octarine_core"
 };			

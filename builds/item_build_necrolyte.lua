@@ -15,6 +15,7 @@ X["items"] = {
 	"item_ultimate_scepter",
 	"item_guardian_greaves",
 	"item_shivas_guard",
+	"item_eternal_shroud",
 	"item_ultimate_scepter_2",
 	"item_octarine_core"
 };			
