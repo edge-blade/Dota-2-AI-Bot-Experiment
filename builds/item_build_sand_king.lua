@@ -11,9 +11,11 @@ X["items"] = {
 	"item_ultimate_scepter",
 	"item_cyclone",
 	"item_blink",
-	"item_meteor_hammer",
+	"item_aghanims_shard",
 	"item_shivas_guard",
+	"item_wind_waker",
 	"item_ultimate_scepter_2",
+	"item_overwhelming_blink",
 	"item_octarine_core"
 };			
 

@@ -6,17 +6,20 @@ local talents = IBUtil.FillTalenTable(npcBot);
 local skills  = IBUtil.FillSkillTable(npcBot, IBUtil.GetSlotPattern(1));
 
 X["items"] = { 
+	"item_null_talisman",
+	"item_null_talisman",
 	"item_magic_wand",
-	"item_arcane_boots",
+	"item_tranquil_boots",
 	"item_medallion_of_courage",
 	"item_hood_of_defiance",
 	"item_rod_of_atos",
 	"item_solar_crest",
 	"item_pipe",
+	"item_assault",
 	"item_ultimate_scepter",
-	"item_shivas_guard",
+	"item_boots_of_bearing",
 	"item_ultimate_scepter_2",
-	"item_monkey_king_bar"
+	"item_shivas_guard",
 };			
 
 X["builds"] = {

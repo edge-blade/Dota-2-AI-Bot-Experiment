@@ -9,15 +9,14 @@ X["items"] = {
 	"item_magic_wand",
 	"item_phase_boots",
 	"item_maelstrom",
-	"item_force_staff",
 	"item_black_king_bar",
 	"item_ultimate_scepter",
 	"item_orchid",
 	"item_bloodthorn",
-	"item_hurricane_pike",
 	"item_mjollnir",
+	"item_monkey_king_bar",
 	"item_ultimate_scepter_2",
-	"item_monkey_king_bar"
+	"item_nullifier"
 };			
 
 X["builds"] = {

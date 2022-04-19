@@ -9,11 +9,11 @@ X["items"] = {
 	"item_magic_wand",
 	"item_power_treads_str",
 	"item_echo_sabre",
-	"item_sange_and_yasha",
 	"item_black_king_bar",
-	"item_blink",
+	"item_silver_edge",
+	"item_swift_blink",
 	"item_ultimate_scepter_2",
-	"item_greater_crit"
+	"item_greater_crit",
 };			
 
 X["builds"] = {

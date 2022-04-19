@@ -11,11 +11,13 @@ X["items"] = {
 	"item_rod_of_atos",
 	"item_force_staff",
 	"item_cyclone",
-	"item_sheepstick",
+	"item_aghanims_shard",
+	"item_ethereal_blade",
 	"item_ultimate_scepter",
 	"item_hurricane_pike",
+	"item_octarine_core",
 	"item_ultimate_scepter_2",
-	"item_octarine_core"
+	"item_wind_waker"
 };			
 
 X["builds"] = {
