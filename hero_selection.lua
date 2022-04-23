@@ -411,7 +411,7 @@ local RandomTime = 0;
 function AllPickLogic()
 
 	if not CanPick() then return end;
-	 
+	
 	 local idx = 0;
 	 for _,i in pairs(GetTeamPlayers(GetTeam())) 
 	 do 
@@ -836,6 +836,14 @@ end
 ----------------------------------------------------HERO SELECTION UTILITY FUNCTION------------------------------
 --Pick hero based on role
 function PickRightHero(slot)
+
+	--[[
+		TODO: 
+		Based on the rest of my teams selections (human and bots), skip certain roles to avoid excessive carry or support selection
+		E.g. When picking right hero, check if the other selctions on my team have been made and ensure we have
+		midlaner, then offlane, then safeLaneCarry, then support. If at least 1 exists per team we can 
+	--]]
+
 	local initHero = GetRandomHero();
 	local Team = GetTeam();
 	if slot == 0 then
