@@ -5,13 +5,20 @@ local utils = require(GetScriptDirectory() .. "/util");
 local hero_roles = role["hero_roles"];
 -- mandate that the bots will pick these heroes - for testing purposes
 local requiredHeroes = {
-	'npc_dota_hero_broodmother',
-	'npc_dota_hero_dawnbreaker',
-	'npc_dota_hero_hoodwink',
+	-- 'npc_dota_hero_broodmother',
+	-- 'npc_dota_hero_dawnbreaker',
+	-- 'npc_dota_hero_hoodwink',
 };
 
+-- Store any heroes that have breaking changes or are not yet introduced
 local UnImplementedHeroes = {
-	'npc_dota_hero_primal_beast'
+	'npc_dota_hero_primal_beast',
+	'npc_dota_hero_dark_willow',
+	'npc_dota_hero_clinkz',
+	'npc_dota_hero_bloodseeker',
+	'npc_dota_hero_broodmother',
+	'npc_dota_hero_tinker',
+	'npc_dota_hero_abyssal_underlord'
 };
 
 ----------------------------------------------------------GIVE THE BOT A PRO PLAYER NAME---------------------------------------------------------------------------------------------
@@ -65,7 +72,7 @@ local allBotHeroes = {
 	'npc_dota_hero_riki',
 	'npc_dota_hero_lycan',
 	'npc_dota_hero_clinkz',
-	'npc_dota_hero_techies',
+	-- 'npc_dota_hero_techies',
 	'npc_dota_hero_winter_wyvern',
 	'npc_dota_hero_pugna',
 	'npc_dota_hero_queenofpain',
@@ -937,7 +944,7 @@ function GetRandomHero()
         hero = allBotHeroes[RandomInt(1, #allBotHeroes)];
     end
 
-    while ( selectedHeroes[hero] == true ) do
+    while ( selectedHeroes[hero] == true or IsUnImplementedHeroes(hero) ) do
         hero = allBotHeroes[RandomInt(1, #allBotHeroes)];
     end
 

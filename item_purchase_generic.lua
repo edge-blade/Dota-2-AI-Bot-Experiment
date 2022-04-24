@@ -346,9 +346,10 @@ function ItemPurchaseThink()
 		end
 	end
 	
-	if ( role['supportExist'] == false or ( role['supportExist'] == nil and DotaTime() > 0 ) ) and GetItemStockCount( "item_courier" ) > 0 then
-		bot:ActionImmediate_PurchaseItem( 'item_courier' );	
-	end
+	-- Ensured a courier was purchased in the original bots based on suppport's being selected
+	-- if ( role['supportExist'] == false or ( role['supportExist'] == nil and DotaTime() > 0 ) ) and GetItemStockCount( "item_courier" ) > 0 then
+	-- 	bot:ActionImmediate_PurchaseItem( 'item_courier' );	
+	-- end
 	
 	--purchase courier when no support in team
 	-- if DotaTime() < 0 and role['supportExist'] == false and GetItemStockCount( "item_courier" ) > 0 then 
