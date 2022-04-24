@@ -7,6 +7,22 @@ local utils = require(GetScriptDirectory() ..  "/util")
 local mutil = require(GetScriptDirectory() ..  "/MyUtility")
 local role = require(GetScriptDirectory() .. "/RoleUtility");
 
+--[[
+		"Ability1"		"bloodseeker_bloodrage"
+		"Ability2"		"bloodseeker_blood_bath"
+		"Ability3"		"bloodseeker_thirst"
+		"Ability4"		"bloodseeker_blood_mist"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"bloodseeker_rupture"
+		"Ability10"		"special_bonus_unique_bloodseeker_5"
+		"Ability11"		"special_bonus_unique_bloodseeker_6"
+		"Ability12"		"special_bonus_unique_bloodseeker_7"
+		"Ability13"		"special_bonus_unique_bloodseeker_2"
+		"Ability14"		"special_bonus_unique_bloodseeker_3"
+		"Ability15"		"special_bonus_spell_lifesteal_15"
+		"Ability16"		"special_bonus_unique_bloodseeker_rupture_charges"
+		"Ability17"		"special_bonus_unique_bloodseeker_4"
+]]
 function AbilityLevelUpThink()  
 	ability_item_usage_generic.AbilityLevelUpThink(); 
 end

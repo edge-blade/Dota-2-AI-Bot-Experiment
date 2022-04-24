@@ -6,6 +6,23 @@ local ability_item_usage_generic = dofile( GetScriptDirectory().."/ability_item_
 local utils = require(GetScriptDirectory() ..  "/util")
 local mutil = require(GetScriptDirectory() ..  "/MyUtility")
 
+--[[
+	"Ability1"		"clinkz_strafe" -- Burning Barrage
+	"Ability2"		"clinkz_searing_arrows"
+	"Ability3"		"clinkz_wind_walk"
+	"Ability4"		"clinkz_burning_army"
+	"Ability5"		"generic_hidden"
+	"Ability6"		"clinkz_death_pact"
+	"Ability10"		"special_bonus_unique_clinkz_1"
+	"Ability11"		"special_bonus_unique_clinkz_10"
+	"Ability12"		"special_bonus_unique_clinkz_8"
+	"Ability13"		"special_bonus_unique_clinkz_2"
+	"Ability14"		"special_bonus_attack_range_125"
+	"Ability15"		"special_bonus_unique_clinkz_12"
+	"Ability16"		"special_bonus_unique_clinkz_4"
+	"Ability17"		"special_bonus_unique_clinkz_3"
+]]
+
 function AbilityLevelUpThink()  
 	ability_item_usage_generic.AbilityLevelUpThink(); 
 end
@@ -50,7 +67,7 @@ function AbilityUsageThink()
 		ToggleSearingArrow();
 	end
 	
-	castSTDesire			   = ConsiderStarfe()
+	castSTDesire, castSTTarget = ConsiderStrafe()
 	castSADesire, castSATarget = ConsiderSearingArrows()
 	castWWDesire               = ConsiderWindWalk()
 	castDPDesire, castDPTarget = ConsiderDeathPack()
@@ -64,7 +81,7 @@ function AbilityUsageThink()
 	
 	if castSTDesire > 0
 	then
-		npcBot:Action_UseAbility(abilityST);
+		npcBot:Action_UseAbilityOnLocation(abilityST, castSTTarget );
 		return;
 	end
 	
@@ -144,33 +161,45 @@ function GetMostHPCreep(range)
 	return mostHP;
 end
 
-function ConsiderStarfe()
+function ConsiderStrafe()
 
-	if ( not abilityST:IsFullyCastable() ) then 
+	-- Make sure it's castable
+	if ( abilityE:IsFullyCastable() == false or abilityE:IsTrained() == false ) then 
 		return BOT_ACTION_DESIRE_NONE;
 	end
-	
-	local nCastRange = npcBot:GetAttackRange()
-	
-	if ( npcBot:GetActiveMode() == BOT_MODE_ROSHAN  ) 
+
+	-- Get some of its values
+	local nRadius      = 200;
+	local nCastRange   = npcBot:GetAttackRange();
+	local nAttackRange = npcBot:GetAttackRange( );
+		
+	if mutil.IsInTeamFight(npcBot, 1200)
 	then
-		local npcTarget = npcBot:GetAttackTarget();
-		if ( mutil.IsRoshan(npcTarget) and mutil.CanCastOnMagicImmune(npcTarget) and mutil.IsInRange(npcTarget, npcBot, 400) )
+		local locationAoE = npcBot:FindAoELocation( true, true, npcBot:GetLocation(), nCastRange, nRadius, 0, 0 );
+		if ( locationAoE.count >= 2 ) 
 		then
-			return BOT_ACTION_DESIRE_LOW;
+			return BOT_ACTION_DESIRE_LOW, locationAoE.targetloc;
 		end
 	end
-	
+
+	-- If we're going after someone
 	if mutil.IsGoingOnSomeone(npcBot)
 	then
 		local npcTarget = npcBot:GetTarget();
-		if mutil.IsValidTarget(npcTarget) and mutil.CanCastOnMagicImmune(npcTarget) and mutil.IsInRange(npcTarget, npcBot, nCastRange)
+		if mutil.IsValidTarget(npcTarget) and mutil.CanCastOnNonMagicImmune(npcTarget) and mutil.IsInRange(npcTarget, npcBot, nAttackRange) 
 		then
-			return BOT_ACTION_DESIRE_LOW;
+			return BOT_ACTION_DESIRE_HIGH, npcTarget:GetLocation();
 		end
 	end
+	
+	local skThere, skLoc = mutil.IsSandKingThere(npcBot, nCastRange, 2.0);
+	
+	if skThere then
+		return BOT_ACTION_DESIRE_MODERATE, skLoc;
+	end
+	
+	return BOT_ACTION_DESIRE_NONE, 0;
 
-	return BOT_ACTION_DESIRE_NONE;
 	
 end
 

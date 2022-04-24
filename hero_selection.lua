@@ -14,8 +14,6 @@ local requiredHeroes = {
 local UnImplementedHeroes = {
 	'npc_dota_hero_primal_beast',
 	'npc_dota_hero_dark_willow',
-	'npc_dota_hero_clinkz',
-	'npc_dota_hero_bloodseeker',
 	'npc_dota_hero_broodmother',
 	'npc_dota_hero_tinker',
 	'npc_dota_hero_abyssal_underlord'
