@@ -13,8 +13,10 @@ local requiredHeroes = {
 -- Store any heroes that have breaking changes or are not yet introduced
 local UnImplementedHeroes = {
 	'npc_dota_hero_primal_beast',
+	'npc_dota_hero_marci',
 	'npc_dota_hero_dark_willow',
 	'npc_dota_hero_broodmother',
+	'npc_dota_hero_techies',
 	'npc_dota_hero_tinker',
 	'npc_dota_hero_abyssal_underlord'
 };
