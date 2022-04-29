@@ -921,37 +921,38 @@ function UnImplementedItemUsage()
 	-- 		return
 	-- 	end
 	-- end
-	
-	local itg=IsItemAvailable("item_tango");
-	if itg~=nil and itg:IsFullyCastable() then
-		local tCharge = itg:GetCurrentCharges()
-		if DotaTime() > -80 and DotaTime() < 0 and bot:DistanceFromFountain() == 0 and role.CanBeSupport(bot:GetUnitName())
-		   and bot:GetAssignedLane() ~= LANE_MID and tCharge > 2 and DotaTime() > giveTime + 2.0 then
-			local target = GiveToMidLaner()
-			if target ~= nil then
-				bot:ActionImmediate_Chat(string.gsub(bot:GetUnitName(),"npc_dota_hero_","")..
-						" giving tango to "..
-						string.gsub(target:GetUnitName(),"npc_dota_hero_","")
-						, false);
-				bot:Action_UseAbilityOnEntity(itg, target);
-				giveTime = DotaTime();
-				return;
-			end
-		elseif bot:GetActiveMode() == BOT_MODE_LANING and role.CanBeSupport(bot:GetUnitName()) and tCharge > 1 and DotaTime() > giveTime + 2.0 then
-			local allies = bot:GetNearbyHeroes(1200, false, BOT_MODE_NONE)
-			for _,ally in pairs(allies)
-			do
-				local tangoSlot = ally:FindItemSlot('item_tango');
-				if ally:GetUnitName() ~= bot:GetUnitName() and not ally:IsIllusion() 
-				   and tangoSlot == -1 and GetItemCount(ally, "item_tango_single") == 0 
-				then
-					bot:Action_UseAbilityOnEntity(itg, ally);
-					giveTime = DotaTime();
-					return
-				end
-			end
-		end
-	end
+
+	-- Tangos expire so there's no point in giving tangos pregame
+	-- local itg=IsItemAvailable("item_tango");
+	-- if itg~=nil and itg:IsFullyCastable() then
+	-- 	local tCharge = itg:GetCurrentCharges()
+	-- 	if DotaTime() > -80 and DotaTime() < 0 and bot:DistanceFromFountain() == 0 and role.CanBeSupport(bot:GetUnitName())
+	-- 	   and bot:GetAssignedLane() ~= LANE_MID and tCharge > 2 and DotaTime() > giveTime + 2.0 then
+	-- 		local target = GiveToMidLaner()
+	-- 		if target ~= nil then
+	-- 			bot:ActionImmediate_Chat(string.gsub(bot:GetUnitName(),"npc_dota_hero_","")..
+	-- 					" giving tango to "..
+	-- 					string.gsub(target:GetUnitName(),"npc_dota_hero_","")
+	-- 					, false);
+	-- 			bot:Action_UseAbilityOnEntity(itg, target);
+	-- 			giveTime = DotaTime();
+	-- 			return;
+	-- 		end
+	-- 	elseif bot:GetActiveMode() == BOT_MODE_LANING and role.CanBeSupport(bot:GetUnitName()) and tCharge > 1 and DotaTime() > giveTime + 2.0 then
+	-- 		local allies = bot:GetNearbyHeroes(1200, false, BOT_MODE_NONE)
+	-- 		for _,ally in pairs(allies)
+	-- 		do
+	-- 			local tangoSlot = ally:FindItemSlot('item_tango');
+	-- 			if ally:GetUnitName() ~= bot:GetUnitName() and not ally:IsIllusion() 
+	-- 			   and tangoSlot == -1 and GetItemCount(ally, "item_tango_single") == 0 
+	-- 			then
+	-- 				bot:Action_UseAbilityOnEntity(itg, ally);
+	-- 				giveTime = DotaTime();
+	-- 				return
+	-- 			end
+	-- 		end
+	-- 	end
+	-- end
 	
 	local bdg=IsItemAvailable("item_blink");
 	if bdg~=nil and bdg:IsFullyCastable() then

@@ -40,14 +40,14 @@ local allBotHeroes = {
 	'npc_dota_hero_void_spirit',
 	'npc_dota_hero_mars',
 	'npc_dota_hero_pangolier',
-	'npc_dota_hero_dark_willow',
+	-- 'npc_dota_hero_dark_willow',
 	'npc_dota_hero_ember_spirit',
 	'npc_dota_hero_earth_spirit',
 	'npc_dota_hero_phoenix',
 	'npc_dota_hero_terrorblade',
 	'npc_dota_hero_morphling',
 	'npc_dota_hero_shredder',
-	'npc_dota_hero_broodmother',
+	-- 'npc_dota_hero_broodmother',
 	'npc_dota_hero_antimage',
 	'npc_dota_hero_dark_seer',
 	'npc_dota_hero_weaver',
@@ -58,7 +58,7 @@ local allBotHeroes = {
 	'npc_dota_hero_chen',
 	'npc_dota_hero_troll_warlord',
 	'npc_dota_hero_alchemist',
-	'npc_dota_hero_tinker',
+	-- 'npc_dota_hero_tinker',
 	'npc_dota_hero_furion',
 	'npc_dota_hero_templar_assassin',
 	'npc_dota_hero_rubick',
@@ -82,7 +82,7 @@ local allBotHeroes = {
 	'npc_dota_hero_nyx_assassin',
 	'npc_dota_hero_storm_spirit',
 	'npc_dota_hero_abaddon',
-	'npc_dota_hero_abyssal_underlord',
+	-- 'npc_dota_hero_abyssal_underlord',
 	'npc_dota_hero_arc_warden',
 	'npc_dota_hero_spirit_breaker',
 	'npc_dota_hero_axe',
@@ -944,7 +944,7 @@ function GetRandomHero()
         hero = allBotHeroes[RandomInt(1, #allBotHeroes)];
     end
 
-    while ( selectedHeroes[hero] == true or IsUnImplementedHeroes(hero) ) do
+    while ( selectedHeroes[hero] == true ) do
         hero = allBotHeroes[RandomInt(1, #allBotHeroes)];
     end
 
