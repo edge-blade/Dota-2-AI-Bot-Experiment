@@ -1,4 +1,4 @@
-# bot-experiment
+# Dota 2 AI Bot Experiment
 Based on FuriousPuppy BotScript to try fixing bots and learn some Lua Scripting. No intent to profit or take advantage of the original source project.
 
 ----
@@ -9,6 +9,8 @@ https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting
 
 https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/Abilities_Data_Driven
 
+### Useful Lua Scripting Resources:
+https://devhints.io/lua
 
 ---
 #### Reference to get a VPK.exe
