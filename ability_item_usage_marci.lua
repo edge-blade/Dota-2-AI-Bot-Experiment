@@ -57,6 +57,11 @@ local castWDesire = 0;
 local castEDesire = 0;
 local castRDesire = 0;
 
+local wTarget = nil;
+local eTarget = nil;
+
+local castWLoc = nil;
+
 function AbilityUsageThink()
 	
 	if npcBot:IsUsingAbility() or npcBot:IsChanneling() or npcBot:IsSilenced() then return end
@@ -66,14 +71,16 @@ function AbilityUsageThink()
 	if abilityE == nil then abilityE = npcBot:GetAbilityByName( "marci_guardian" ) end
 	if abilityR == nil then abilityR = npcBot:GetAbilityByName( "marci_unleash" ) end
 
-	castQDesire              = ConsiderQ();
-	castWDesire, castWLoc    = ConsiderW();
-	castEDesire              = ConsiderE();
-	castRDesire, castRLoc    = ConsiderR();
 
-	if ( castWDesire > 0 ) 
+	castQDesire              		= ConsiderQ();
+	castWDesire, castWLoc, wTarget	= ConsiderW();
+	castEDesire, eTarget   			= ConsiderE();
+	castRDesire    					= ConsiderR();
+
+	if ( castWDesire > 0  and mutil.IsValidTarget(wTarget)) 
 	then
-		npcBot:Action_UseAbilityOnLocation( abilityW, castWLoc );
+		npcBot:ActionQueue_UseAbilityOnEntity(abilityW, wTarget);
+		npcBot:ActionQueue_UseAbilityOnLocation(abilityW, castWLoc);
 		return;
 	end
 
@@ -85,7 +92,7 @@ function AbilityUsageThink()
 
 	if ( castEDesire > 0 ) 
 	then
-		npcBot:Action_UseAbility( abilityE );
+		npcBot:Action_UseAbilityOnEntity( abilityE, eTarget );
 		return;
 	end
 
@@ -145,7 +152,7 @@ function ConsiderW()
 
 	-- Make sure it's castable
 	if ( not abilityW:IsFullyCastable() ) then 
-		return BOT_ACTION_DESIRE_NONE, 0;
+		return BOT_ACTION_DESIRE_NONE, 0, nil;
 	end
 
 	-- Get some of its values
@@ -166,7 +173,7 @@ function ConsiderW()
 			if allyDistanceToEnemy >= nMinDistance then
 				-- if we can kill the enemy
 				if mutil.CanCastOnMagicImmune(npcEnemy) and mutil.CanKillTarget(npcEnemy, nDamage, DAMAGE_TYPE_MAGICAL) then
-					return BOT_ACTION_DESIRE_HIGH, npcEnemy:GetLocation();
+					return BOT_ACTION_DESIRE_HIGH, npcEnemy:GetLocation(), npcAlly;
 				end
 				
 				-- If we're going after someone
@@ -175,7 +182,7 @@ function ConsiderW()
 					local npcTarget = npcBot:GetTarget();
 					if mutil.IsValidTarget(npcTarget) and mutil.CanCastOnMagicImmune(npcTarget)
 					then
-						return BOT_ACTION_DESIRE_HIGH, npcTarget:GetLocation()
+						return BOT_ACTION_DESIRE_HIGH, npcTarget:GetLocation(), npcAlly;
 					end
 				end
 
@@ -187,12 +194,12 @@ function ConsiderW()
 		then
 			-- check if anyone is closer to fountain and jump towards fountain
 			if npcBot:DistanceFromFountain() > npcAlly:DistanceFromFountain() then
-				return BOT_ACTION_DESIRE_HIGH, GetShopLocation(GetTeam(), SHOP_HOME);
+				return BOT_ACTION_DESIRE_HIGH, GetShopLocation(GetTeam(), SHOP_HOME), npcAlly;
 			end
 		end
 	end
 	
-	return BOT_ACTION_DESIRE_NONE, 0;
+	return BOT_ACTION_DESIRE_NONE, 0, nil;
 
 end
 
@@ -200,7 +207,7 @@ function ConsiderE()
 
 	-- Make sure it's castable
 	if ( not abilityE:IsFullyCastable() ) then 
-		return BOT_ACTION_DESIRE_NONE, 0;
+		return BOT_ACTION_DESIRE_NONE, nil;
 	end
 
 	-- Get some of its values
@@ -265,14 +272,14 @@ function ConsiderE()
 		end
 	end
 	
-	return BOT_ACTION_DESIRE_NONE, 0;
+	return BOT_ACTION_DESIRE_NONE, nil;
 
 end
 
 function ConsiderR()
 	
 	if ( not abilityR:IsFullyCastable() ) then 
-		return BOT_ACTION_DESIRE_NONE, 0;
+		return BOT_ACTION_DESIRE_NONE;
 	end
 	
 	if mutils.IsGoingOnSomeone(npcBot)
@@ -282,9 +289,9 @@ function ConsiderR()
 			and mutils.CanCastOnMagicImmune(target) 
 			and mutils.IsInRange(target, npcBot, 500)  
 		then
-			return BOT_ACTION_DESIRE_HIGH, nil;
+			return BOT_ACTION_DESIRE_HIGH;
 		end
 	end
 	
-	return BOT_ACTION_DESIRE_NONE, nil;
+	return BOT_ACTION_DESIRE_NONE;
 end
