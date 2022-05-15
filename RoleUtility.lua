@@ -1634,6 +1634,7 @@ X['off'] = {
 	'npc_dota_hero_legion_commander',
 	'npc_dota_hero_magnataur',
 	'npc_dota_hero_mars',
+	'npc_dota_hero_marci',
 	'npc_dota_hero_night_stalker',
 	'npc_dota_hero_omniknight',
 	'npc_dota_hero_pangolier',
