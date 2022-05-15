@@ -464,13 +464,8 @@ end
 ItemUsageModule.Use['item_tango'] = function(item, bot, mode, extra_range)
 	
 	local tCharge = item:GetCurrentCharges()
-	if DotaTime() > -80 and DotaTime() < 0 and bot:DistanceFromFountain() == 0 and role.CanBeSupport(bot:GetUnitName())
-	   and bot:GetAssignedLane() ~= LANE_MID and tCharge > 2 and DotaTime() > giveTime + 2.0 then
-		local target = ItemUsageModule.GiveToMidLaner(bot)
-		if target ~= nil then
-			giveTime = DotaTime();
-			return BOT_ACTION_DESIRE_ABSOLUTE, target, 'unit';
-		end
+	if DotaTime() < 0 then
+		-- Do Nothing in the early game with tangos
 	elseif bot:GetActiveMode() == BOT_MODE_LANING and role.CanBeSupport(bot:GetUnitName()) and tCharge > 1 and DotaTime() > giveTime + 2.0 then
 		local allies = bot:GetNearbyHeroes(600, false, BOT_MODE_NONE)
 		for _,ally in pairs(allies)
