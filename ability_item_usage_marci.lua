@@ -57,6 +57,7 @@ local castWDesire = 0;
 local castEDesire = 0;
 local castRDesire = 0;
 
+local qTarget = nil;
 local wTarget = nil;
 local eTarget = nil;
 
@@ -72,7 +73,7 @@ function AbilityUsageThink()
 	if abilityR == nil then abilityR = npcBot:GetAbilityByName( "marci_unleash" ) end
 
 
-	castQDesire              		= ConsiderQ();
+	castQDesire, qTarget            = ConsiderQ();
 	castWDesire, castWLoc, wTarget	= ConsiderW();
 	castEDesire, eTarget   			= ConsiderE();
 	castRDesire    					= ConsiderR();
@@ -86,7 +87,7 @@ function AbilityUsageThink()
 
 	if ( castQDesire > 0 ) 
 	then
-		npcBot:Action_UseAbility( abilityQ );
+		npcBot:ActionQueue_UseAbilityOnEntity( abilityQ, qTarget );
 		return;
 	end
 
@@ -108,7 +109,7 @@ function ConsiderQ()
 
 	-- Make sure it's castable
 	if ( not abilityW:IsFullyCastable() ) then 
-		return BOT_ACTION_DESIRE_NONE, 0;
+		return BOT_ACTION_DESIRE_NONE, nil;
 	end
 
 	-- Get some of its values
@@ -144,7 +145,7 @@ function ConsiderQ()
 		end
 	end
 	
-	return BOT_ACTION_DESIRE_NONE, 0;
+	return BOT_ACTION_DESIRE_NONE, nil;
 
 end
 
