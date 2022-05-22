@@ -24,6 +24,12 @@ https://devhints.io/lua
 #### Usage / Testing
 Place all script files in `Steam\SteamApps\common\dota 2 beta\game\dota\scripts\vscripts\bots`, and select `default bots` in the practice.
 
+If you would like a clean build (without all the other files that aren't necessary to run the bots) then:
+1. Open a PowerShell console
+2. Navigate to the project root directory
+3. Execute the `build.ps1`
+4. Copy the contents from the `output` folder off of root into your bots folder listed above
+
 ---
 #### Basic Breakdown
 I believe some of the generic bot scripts will affect NPCs that have AI that a standard player would control, so you may need to account for illusions and other creeps when aborting decision making in things like Item Purchasing for characters like Phantom Lancer, amoung others.
