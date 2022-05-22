@@ -937,6 +937,21 @@ ItemUsageModule.Use['item_mask_of_madness'] = function(item, bot, mode, extra_ra
 	return BOT_ACTION_DESIRE_NONE;
 end
 
+--item_revenants_brooch
+ItemUsageModule.Use['item_revenants_brooch'] = function(item, bot, mode, extra_range)
+
+	-- Only need to trigger the brooch if we're trying to attack someone as a solid atttack damage increase
+	if  mutil.IsGoingOnSomeone(bot) then
+		local target = bot:GetTarget();
+		if  mutil.IsValidTarget(target) 
+			and mutil.IsInRange(target, bot, bot:GetAttackRange() + 200) 
+		then	
+			return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+		end		
+	end
+	return BOT_ACTION_DESIRE_NONE;
+end
+
 --item_moon_shard
 ItemUsageModule.Use['item_moon_shard'] = function(item, bot, mode, extra_range)
 	if bot:HasModifier("modifier_item_moon_shard_consumed") == false
