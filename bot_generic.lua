@@ -60,6 +60,10 @@ function IsHealingWard(unit_name)
 	return unit_name == "npc_dota_juggernaut_healing_ward";
 end
 
+function IsWraithPactTotem(unit_name)
+	return unit_name == "npc_dota_item_wraith_pact_totem";
+end
+
 function IsBear(unit_name)
 	return unit_name == "npc_dota_lone_druid_bear1"
 		or unit_name == "npc_dota_lone_druid_bear2"
@@ -1178,7 +1182,7 @@ function MinionThink(  hMinionUnit )
 				return
 			end
 			return
-		elseif IsHealingWard(hMinionUnit:GetUnitName()) then
+		elseif IsHealingWard(hMinionUnit:GetUnitName()) or IsWraithPactTotem(hMinionUnit:GetUnitName()) then
 			if GetUnitToUnitDistance(hMinionUnit, bot) > 150 then
 				hMinionUnit:Action_MoveToLocation(bot:GetLocation());
 				return

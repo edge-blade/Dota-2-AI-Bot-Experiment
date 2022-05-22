@@ -556,6 +556,54 @@ ItemUsageModule.Use['item_clarity'] = function(item, bot, mode, extra_range)
 	return BOT_ACTION_DESIRE_NONE;
 end
 
+--item_paintball
+ItemUsageModule.Use['item_paintball'] = function (item, bot, mode, extra_range)
+
+	local nCastRange = 900 + extra_range;
+	
+	if mutil.IsGoingOnSomeone(bot)
+	then
+		local target = bot:GetTarget();
+		if mutil.IsValidTarget(target) == true 
+			and mutil.CanCastOnNonMagicImmune(target) == true
+			and mutil.IsInRange(target, bot, nCastRange) == true
+		then
+			return BOT_ACTION_DESIRE_ABSOLUTE, target, 'unit';
+		end
+	end
+
+	return BOT_ACTION_DESIRE_NONE;
+end
+
+--item_force_field
+ItemUsageModule.Use['item_force_field'] = function(item, bot, mode, extra_range)
+	return ItemUsageModule.Use['item_pipe'](item, bot, mode, extra_range);
+end
+
+--item_heavy_blade
+ItemUsageModule.Use['item_heavy_blade'] = function(item, bot, mode, extra_range)
+	-- local castRange = 500 + extra_range;
+	-- -- If ally has negative debuff, purge
+	-- if bot:NumModifiers() > 3 then
+	-- 	-- purge self
+	-- 	return BOT_ACTION_DESIRE_NONE;
+	-- end
+
+	-- local allies = bot:GetNearbyHeroes(castRange, false, BOT_MODE_NONE)
+	-- for _,ally in pairs(allies)
+	-- do
+	-- 	if ally:NumModifiers() > 3 then
+	-- 		-- purge self
+	-- 		return BOT_ACTION_DESIRE_NONE;
+	-- 	end
+	-- end
+
+	-- If enemy has positive debuff, purge (SUBTRACT 100)
+	--return ItemUsageModule.Use['item_pipe'](item, bot, mode, extra_range);
+
+	return BOT_ACTION_DESIRE_NONE;
+end
+
 --item_faerie_fire
 ItemUsageModule.Use['item_faerie_fire'] = function(item, bot, mode, extra_range)
 	
@@ -803,6 +851,68 @@ ItemUsageModule.Use['item_ghost'] = function(item, bot, mode, extra_range)
 	return BOT_ACTION_DESIRE_NONE;
 end
 
+--item_unstable_wand
+ItemUsageModule.Use['item_unstable_wand'] = function(item, bot, mode, extra_range)
+	if mutil.IsRetreating(bot)
+		and ( bot:WasRecentlyDamagedByAnyHero(6.0) == true or bot:WasRecentlyDamagedByTower(6.0) == true )
+	then	
+		local enemies = bot:GetNearbyHeroes(1600, true, BOT_MODE_NONE)
+		if #enemies == 0 then
+			return BOT_ACTION_DESIRE_ABSOLUTE, nil,  'no_target';
+		end
+	end	
+	return BOT_ACTION_DESIRE_NONE;
+end
+
+--item_pogo_stick
+ItemUsageModule.Use['item_pogo_stick'] = function(item, bot, mode, extra_range)
+
+	if bot:IsRooted() then return BOT_ACTION_DESIRE_NONE end
+
+	local nCastRange = 300 + extra_range;
+	if mutil.IsStuck(bot) == true 
+	then
+		return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+	end
+	
+	if mutil.IsRetreating(bot)
+		and ( bot:WasRecentlyDamagedByAnyHero(5.0) == true or bot:WasRecentlyDamagedByTower(5.0) == true )
+	then	
+		local enemies = bot:GetNearbyHeroes(1300, true, BOT_MODE_NONE)
+		if #enemies > 0 then
+			return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+		end
+		
+		if ItemUsageModule.CanDodgeProjectile(bot, 250) == true 
+		then
+			return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+		end
+		
+	end	
+	
+	if 	mutil.IsGoingOnSomeone(bot)
+	then
+		local target = bot:GetTarget();
+		if  mutil.IsValidTarget(target) 
+			and mutil.IsInRange(target, bot, bot:GetAttackRange() + 200) == false 
+			and mutil.IsInRange(target, bot, nCastRange) == true
+		then
+			local allies = target:GetNearbyHeroes(1300, true, BOT_MODE_NONE);
+			local enemies = target:GetNearbyHeroes(1300, false, BOT_MODE_NONE);
+			if ( enemies ~= nil and allies ~= nil and #allies >= #enemies ) or bot:GetStunDuration(true) > 0.5 
+			then
+				return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+			end
+		end
+		if ItemUsageModule.CanDodgeProjectile(bot, 250) == true 
+		then
+			return BOT_ACTION_DESIRE_ABSOLUTE, nil, 'no_target';
+		end
+	end
+	
+	return BOT_ACTION_DESIRE_NONE;
+end
+
 --item_blink
 ItemUsageModule.Use['item_blink'] = function(item, bot, mode, extra_range)
 
@@ -900,6 +1010,8 @@ ItemUsageModule.Use['item_power_treads'] = function(item, bot, mode, extra_range
 	end
 	return BOT_ACTION_DESIRE_NONE;
 end
+
+--
 
 --item_mask_of_madness
 ItemUsageModule.Use['item_mask_of_madness'] = function(item, bot, mode, extra_range)
