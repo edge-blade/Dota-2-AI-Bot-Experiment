@@ -78,18 +78,6 @@ function AbilityUsageThink()
 	castEDesire, eTarget   			= ConsiderE();
 	castRDesire    					= ConsiderR();
 
-	if ( castWDesire > 0  and mutil.IsValidTarget(wTarget)) 
-	then
-		npcBot:ActionQueue_UseAbilityOnEntity(abilityW, wTarget);
-		npcBot:ActionQueue_UseAbilityOnLocation(abilityW, castWLoc);
-		return;
-	end
-
-	if ( castQDesire > 0 ) 
-	then
-		npcBot:ActionQueue_UseAbilityOnEntity( abilityQ, qTarget );
-		return;
-	end
 
 	if ( castEDesire > 0 ) 
 	then
@@ -97,9 +85,22 @@ function AbilityUsageThink()
 		return;
 	end
 
+	if ( castQDesire > 0 ) 
+	then
+		npcBot:Action_UseAbilityOnEntity( abilityQ, qTarget );
+		return;
+	end
+
 	if ( castRDesire > 0 ) 
 	then
 		npcBot:Action_UseAbility( abilityR );
+		return;
+	end
+	
+	if ( castWDesire > 0  and mutil.IsValidTarget(wTarget)) 
+	then
+		npcBot:Action_UseAbilityOnEntity(abilityW, wTarget);
+		npcBot:Action_UseAbilityOnLocation(abilityW, castWLoc);
 		return;
 	end
 	
