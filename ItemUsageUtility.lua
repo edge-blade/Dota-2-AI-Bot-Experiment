@@ -582,6 +582,10 @@ end
 
 --item_heavy_blade
 ItemUsageModule.Use['item_heavy_blade'] = function(item, bot, mode, extra_range)
+	
+	if bot:IsSilenced() or bot:IsRooted() then
+		return BOT_ACTION_DESIRE_ABSOLUTE, nil, bot;
+	end
 	-- local castRange = 500 + extra_range;
 	-- -- If ally has negative debuff, purge
 	-- if bot:NumModifiers() > 3 then
