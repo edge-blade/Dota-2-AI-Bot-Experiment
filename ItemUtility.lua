@@ -546,7 +546,7 @@ end
 function ItemModule.CanCastNeutralItem(bot, item_name)
 	local neutral_item_slot = 16;
 	local n_item = bot:GetItemInSlot(neutral_item_slot);
-	if n_item ~= nil and n_item:GetName() == item_name then
+	if n_item ~= nil and n_item:GetName() == item_name and bot:IsAlive() then
 		return n_item;
 	end
 	return nil;
