@@ -13,7 +13,7 @@ local requiredHeroes = {
 -- Store any heroes that have breaking changes or are not yet introduced
 local UnImplementedHeroes = {
 	'npc_dota_hero_primal_beast',
-	--'npc_dota_hero_marci',
+	'npc_dota_hero_marci',
 	'npc_dota_hero_dark_willow',
 	'npc_dota_hero_broodmother',
 	'npc_dota_hero_techies',
@@ -39,7 +39,7 @@ local allBotHeroes = {
 	'npc_dota_hero_snapfire',
 	'npc_dota_hero_void_spirit',
 	'npc_dota_hero_mars',
-	'npc_dota_hero_marci',
+	--'npc_dota_hero_marci',
 	'npc_dota_hero_pangolier',
 	-- 'npc_dota_hero_dark_willow',
 	'npc_dota_hero_ember_spirit',
