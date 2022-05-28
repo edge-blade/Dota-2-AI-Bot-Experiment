@@ -11,12 +11,13 @@ X["items"] = {
 	"item_vanguard",
 	"item_blink",
 	"item_blade_mail",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_black_king_bar",
 	"item_crimson_guard",
 	"item_overwhelming_blink",
 	"item_ultimate_scepter_2",
-	"item_lotus_orb"
+	"item_lotus_orb",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

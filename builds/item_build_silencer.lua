@@ -10,11 +10,12 @@ X["items"] = {
 	"item_power_treads_int",
 	"item_witch_blade",
 	"item_hurricane_pike",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_bloodthorn",
 	"item_black_king_bar",
 	"item_ultimate_scepter_2",
-	"item_revenants_brooch"
+	"item_revenants_brooch",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

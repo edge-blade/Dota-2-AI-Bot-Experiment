@@ -13,9 +13,10 @@ X["items"] = {
 	"item_silver_edge",
 	"item_blink",
 	"item_boots_of_bearing",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_ultimate_scepter_2",
-	"item_monkey_king_bar"
+	"item_monkey_king_bar",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

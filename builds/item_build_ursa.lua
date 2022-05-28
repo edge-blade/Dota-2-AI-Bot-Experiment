@@ -13,12 +13,13 @@ X["items"] = {
 	"item_blink",
 	"item_black_king_bar",
 	"item_abyssal_blade",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_ultimate_scepter",
 	"item_satanic",
 	"item_ultimate_scepter_2",
 	"item_monkey_king_bar",
-	"item_swift_blink"
+	"item_swift_blink",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

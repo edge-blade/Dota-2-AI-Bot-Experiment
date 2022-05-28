@@ -12,10 +12,11 @@ X["items"] = {
 	"item_black_king_bar",
 	"item_basher",
 	"item_skadi",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_butterfly",
 	"item_ultimate_scepter_2",
-	"item_monkey_king_bar"
+	"item_monkey_king_bar",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

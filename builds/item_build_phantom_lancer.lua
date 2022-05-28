@@ -11,10 +11,11 @@ X["items"] = {
 	"item_diffusal_blade",
 	"item_manta",
 	"item_skadi",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_ultimate_scepter",
 	"item_heart",
-	"item_ultimate_scepter_2"
+	"item_ultimate_scepter_2",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

@@ -11,9 +11,10 @@ X["items"] = {
 	"item_witch_blade",
 	"item_shivas_guard",
 	"item_wind_waker",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_ultimate_scepter_2",
-	"item_sheepstick"
+	"item_sheepstick",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

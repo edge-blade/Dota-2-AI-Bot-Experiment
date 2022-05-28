@@ -11,11 +11,12 @@ X["items"] = {
 	"item_arcane_boots",
 	"item_aether_lens",
 	"item_ultimate_scepter",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_cyclone",
 	"item_octarine_core",
 	"item_ultimate_scepter_2",
-	"item_ethereal_blade"
+	"item_ethereal_blade",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

@@ -15,9 +15,10 @@ X["items"] = {
 	"item_bloodthorn",
 	"item_black_king_bar",
 	"item_boots_of_bearing",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_ultimate_scepter_2",
-	"item_ethereal_blade"
+	"item_ethereal_blade",
+	"item_aghanims_shard",
 };
 
 X["builds"] = {

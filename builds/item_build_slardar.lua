@@ -10,12 +10,13 @@ X["items"] = {
 	"item_power_treads_str",
 	"item_echo_sabre",
 	"item_blink",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_black_king_bar",
 	"item_assault",
 	"item_ultimate_scepter_2",
 	"item_heart",
-	"item_overwhelming_blink"
+	"item_overwhelming_blink",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

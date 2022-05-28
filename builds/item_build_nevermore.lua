@@ -11,12 +11,13 @@ X["items"] = {
 	"item_dragon_lance",
 	"item_invis_sword",
 	"item_black_king_bar",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_skadi",
 	"item_silver_edge",
 	"item_ultimate_scepter_2",
 	"item_butterfly",
-	"item_hurricane_pike"
+	"item_hurricane_pike",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {

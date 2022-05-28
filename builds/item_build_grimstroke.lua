@@ -12,10 +12,11 @@ X["items"] = {
 	"item_force_staff",
 	"item_glimmer_cape",
 	"item_cyclone",
-	"item_aghanims_shard",
+	--"item_aghanims_shard",
 	"item_ultimate_scepter_2",
 	"item_sheepstick",
-	"item_hurricane_pike"
+	"item_hurricane_pike",
+	"item_aghanims_shard",
 };			
 
 X["builds"] = {
